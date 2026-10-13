@@ -25,7 +25,6 @@ This document gathers the behavioral competency definitions, interview prompts, 
   - [Decision Quality](#decision-quality)
   - [Business Insight](#business-insight)
 - [Interview Summary and Ratings](#interview-summary-and-ratings)
-- [Image Sources](#image-sources)
 
 ## Guide Overview
 
@@ -458,25 +457,3 @@ The guide's summary page records the interviewer and date, then provides a ratin
 - Recommend for role
 
 The summary also includes a field for additional comments in support of the recommendation. The guide has a notes page for capturing additional interview notes. On competency pages, the interviewer selects behavioral indicators that best reflect the participant's examples and enters a rating.
-
-## Image Sources
-
-The following 17 matching JPEGs were reviewed. Repeated captures are retained in this inventory; their visible content is represented once above.
-
-- `WhatsApp Image 2026-10-12 at 6.32.29 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.29 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.30 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.30 PM (2).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.30 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.31 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.31 PM (2).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.31 PM (3).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.31 PM (4).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.31 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.32 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.32 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.39 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.39 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.40 PM.jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.42 PM (1).jpeg`
-- `WhatsApp Image 2026-10-12 at 6.32.42 PM.jpeg`
