@@ -2,7 +2,7 @@
 
 *Spring Boot · REST APIs · Spring Data JPA · Spring Security · Testing*
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics.md) · [AWS](AWS.md) · [Data](Data.md) · [Spring Boot](Frameworks.md) · [DevOps](DevOps.md) · [Practices](Practices.md) · [Gen AI](GenAI.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -428,4 +428,4 @@ Auth via JWT, least-privilege, validated input, secrets externalized, dependency
 
 ---
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics.md) · [AWS](AWS.md) · [Data](Data.md) · [Spring Boot](Frameworks.md) · [DevOps](DevOps.md) · [Practices](Practices.md) · [Gen AI](GenAI.md)
