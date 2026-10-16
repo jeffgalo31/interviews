@@ -2,7 +2,7 @@
 
 *Lambda · RDS · ECS · DynamoDB · API Gateway · S3 · Data & AI services (Glue, Athena, Redshift, Kinesis, Neptune, Bedrock)*
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · **AWS** · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -709,4 +709,4 @@ Right-size, on-demand vs provisioned, S3 lifecycle, Fargate Spot, Savings Plans,
 
 ---
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · **AWS** · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)

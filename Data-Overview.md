@@ -2,7 +2,7 @@
 
 *Java · Python · SQL · ETL · Data Modeling · Data Warehousing · Spark · Databricks · SQL DB · NoSQL DB · Data Lake · Graph DB*
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -1216,4 +1216,4 @@ Assess/inventory, choose target (lakehouse/warehouse), land data in object stora
 
 ---
 
-**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
