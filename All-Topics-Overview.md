@@ -1,10 +1,32 @@
-# High-Level Overview of All Topics
+<h1 align="center">High-Level Overview of All Topics</h1>
 
-One-page map for quick review. Details live in the per-topic files: [Data-Overview.md](Data-Overview.md) · [Frameworks-Overview.md](Frameworks-Overview.md) · [AWS-Overview.md](AWS-Overview.md) · [DevOps-Overview.md](DevOps-Overview.md) · [Practices-Overview.md](Practices-Overview.md) · [GenAI-Overview.md](GenAI-Overview.md)
+<p align="center"><i>One-page map for quick review. Details live in the per-topic files: [Data-Overview.md](Data-Overview.md) · [Frameworks-Overview.md](Frameworks-Overview.md) · [AWS-Overview.md](AWS-Overview.md) · [DevOps-Overview.md](DevOps-Overview.md) · [Practices-Overview.md](Practices-Overview.md) · [GenAI-Overview.md](GenAI-Overview.md)</i></p>
+
+<p align="center">
+
+![Interview Prep](https://img.shields.io/badge/Interview-Prep-6f42c1?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-5-555?style=for-the-badge)
+
+</p>
+
+<p align="center">**All Topics** · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)</p>
+
+> [!TIP]
+> One-page map for quick review. Follow the links for the full per-topic sheets.
+
+<details>
+<summary><b>📑 Table of contents</b></summary>
+
+1. [🧭 The Big Picture](#-the-big-picture)
+2. [🗺 Topic Map](#-topic-map)
+3. [⏱ 60-Second Answers](#-60-second-answers)
+4. [🔗 How the Pieces Connect (Story for "Tell me about a system you'd build")](#-how-the-pieces-connect-story-for-tell-me-about-a-system-youd-build)
+5. [✅ Last-Minute Checklist](#-last-minute-checklist)
+
+</details>
 
 ---
 
-## The Big Picture
+## 🧭 The Big Picture
 
 Build and operate **data-driven, API-backed systems on AWS**: ingest and transform large datasets, store them in the right database, expose them through **Spring Boot REST APIs**, ship them through **CI/CD** with **TDD** and **security by design**, and add **Gen AI/agentic** capabilities on top.
 
@@ -18,7 +40,7 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 ---
 
-## Topic Map
+## 🗺 Topic Map
 
 | Area | Topics | One-line takeaway | File |
 |---|---|---|---|
@@ -56,7 +78,7 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 ---
 
-## 60-Second Answers
+## ⏱ 60-Second Answers
 
 - **ETL vs ELT:** ETL transforms before loading; ELT loads raw data and transforms in the warehouse/lake (modern default).
 - **Warehouse vs lake vs lakehouse:** structured and curated vs raw and flexible vs both on one copy with ACID (Delta/Iceberg).
@@ -73,7 +95,7 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 ---
 
-## How the Pieces Connect (Story for "Tell me about a system you'd build")
+## 🔗 How the Pieces Connect (Story for "Tell me about a system you'd build")
 
 1. **Ingest** data via CDC/streams into an **S3 data lake** (Parquet/Delta).
 2. **Transform** with Spark/Databricks (bronze → silver → gold), with data quality checks.
@@ -85,7 +107,7 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 ---
 
-## Last-Minute Checklist
+## ✅ Last-Minute Checklist
 
 - [ ] ACID vs BASE, CAP theorem, OLTP vs OLAP
 - [ ] Star schema, grain, SCD types
@@ -99,3 +121,7 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 - [ ] OWASP Top 10, least privilege, threat modeling
 - [ ] RAG pipeline, agent loop, tool calling, MCP, guardrails
 - [ ] 2-3 STAR stories (conflict, failure, delivery under pressure)
+
+---
+
+<p align="center">**All Topics** · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)</p>
