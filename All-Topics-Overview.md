@@ -35,37 +35,37 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 | Area | Topics | One-line takeaway | File |
 |---|---|---|---|
-| **Languages** | Java | JVM, OOP, collections, concurrency; Spark/Kafka run on it | Data |
-| | Python | Pipelines and PySpark; GIL, generators, pandas vs Spark | Data |
-| | SQL | Joins, window functions, CTEs, indexes, query tuning | Data |
-| **Frameworks** | Spring Boot | Auto-config, DI, REST controllers, JPA, Security, Actuator, tests | Frameworks |
-| **Data** | ETL | ETL vs ELT, incremental/CDC, idempotency, data quality | Data |
-| | Data Modeling | Normalization (OLTP) vs star/snowflake (OLAP), grain, SCD | Data |
-| | Data Warehousing | Columnar, MPP, schema-on-write, marts (Snowflake/Redshift/BigQuery) | Data |
-| | Apache Spark | Lazy DAG, shuffle, partitions, broadcast joins, skew, AQE | Data |
-| | Databricks | Delta Lake (ACID, time travel, MERGE), medallion, Unity Catalog | Data |
-| | SQL DB | ACID, indexes, transactions, replicas, partitioning | Data |
-| | NoSQL DB | KV/document/wide-column; CAP, BASE, access-pattern modeling | Data |
-| | Data Lake | Raw files on object storage, Parquet, lakehouse (Delta/Iceberg/Hudi) | Data |
-| | Graph DB | Nodes and edges, Cypher/Gremlin, multi-hop queries, Neptune | Data, AWS |
-| **Cloud (AWS)** | Lambda | Serverless, event-driven, cold starts, 15-min limit | AWS |
-| | RDS | Managed relational; Multi-AZ vs read replicas; Aurora; RDS Proxy | AWS |
-| | ECS | Containers on Fargate/EC2; task def, service, roles | AWS |
-| | DynamoDB | Key-based NoSQL; partition key design, GSI/LSI, streams | AWS |
-| | API Gateway | REST/HTTP APIs, authorizers, throttling, 29 s timeout | AWS |
-| | S3 | Object storage, storage classes, lifecycle, presigned URLs | AWS |
-| | Data & AI services | Glue, Athena, Redshift, Kinesis, Step Functions, Neptune, Bedrock | AWS |
-| **DevOps** | Git | Merge vs rebase, reset vs revert, branching strategies | DevOps |
-| | Jenkins | Jenkinsfile, declarative pipelines, agents, credentials | DevOps |
-| | CI/CD | Build once deploy many, blue/green, canary, rollback | DevOps |
-| | Lean | Eliminate waste, small batches, WIP limits, fast feedback | DevOps |
-| **Practices** | TDD | Red-Green-Refactor, test pyramid, mocks vs stubs | Practices |
-| | Agile/Scrum | Roles, events, Definition of Done, velocity, user stories | Practices |
-| | Pair programming | Driver/navigator, ping-pong, remote pairing | Practices |
-| | Code reviews | Small PRs, constructive feedback, automate the trivial | Practices |
-| | Security by Design | Least privilege, defense in depth, threat modeling, OWASP | Practices |
-| **Emerging** | Gen AI | Tokens, context window, prompting, hallucination, RAG | GenAI |
-| | Agentic patterns | Tool calling, ReAct, workflows vs agents, MCP, guardrails, evals | GenAI |
+| **Languages** | Java | JVM, OOP, collections, concurrency; Spark/Kafka run on it | [Data](Data-Overview.md) |
+| | Python | Pipelines and PySpark; GIL, generators, pandas vs Spark | [Data](Data-Overview.md) |
+| | SQL | Joins, window functions, CTEs, indexes, query tuning | [Data](Data-Overview.md) |
+| **Frameworks** | Spring Boot | Auto-config, DI, REST controllers, JPA, Security, Actuator, tests | [Frameworks](Frameworks-Overview.md) |
+| **Data** | ETL | ETL vs ELT, incremental/CDC, idempotency, data quality | [Data](Data-Overview.md) |
+| | Data Modeling | Normalization (OLTP) vs star/snowflake (OLAP), grain, SCD | [Data](Data-Overview.md) |
+| | Data Warehousing | Columnar, MPP, schema-on-write, marts (Snowflake/Redshift/BigQuery) | [Data](Data-Overview.md) |
+| | Apache Spark | Lazy DAG, shuffle, partitions, broadcast joins, skew, AQE | [Data](Data-Overview.md) |
+| | Databricks | Delta Lake (ACID, time travel, MERGE), medallion, Unity Catalog | [Data](Data-Overview.md) |
+| | SQL DB | ACID, indexes, transactions, replicas, partitioning | [Data](Data-Overview.md) |
+| | NoSQL DB | KV/document/wide-column; CAP, BASE, access-pattern modeling | [Data](Data-Overview.md) |
+| | Data Lake | Raw files on object storage, Parquet, lakehouse (Delta/Iceberg/Hudi) | [Data](Data-Overview.md) |
+| | Graph DB | Nodes and edges, Cypher/Gremlin, multi-hop queries, Neptune | [Data](Data-Overview.md), [AWS](AWS-Overview.md) |
+| **Cloud (AWS)** | Lambda | Serverless, event-driven, cold starts, 15-min limit | [AWS](AWS-Overview.md) |
+| | RDS | Managed relational; Multi-AZ vs read replicas; Aurora; RDS Proxy | [AWS](AWS-Overview.md) |
+| | ECS | Containers on Fargate/EC2; task def, service, roles | [AWS](AWS-Overview.md) |
+| | DynamoDB | Key-based NoSQL; partition key design, GSI/LSI, streams | [AWS](AWS-Overview.md) |
+| | API Gateway | REST/HTTP APIs, authorizers, throttling, 29 s timeout | [AWS](AWS-Overview.md) |
+| | S3 | Object storage, storage classes, lifecycle, presigned URLs | [AWS](AWS-Overview.md) |
+| | Data & AI services | Glue, Athena, Redshift, Kinesis, Step Functions, Neptune, Bedrock | [AWS](AWS-Overview.md) |
+| **DevOps** | Git | Merge vs rebase, reset vs revert, branching strategies | [DevOps](DevOps-Overview.md) |
+| | Jenkins | Jenkinsfile, declarative pipelines, agents, credentials | [DevOps](DevOps-Overview.md) |
+| | CI/CD | Build once deploy many, blue/green, canary, rollback | [DevOps](DevOps-Overview.md) |
+| | Lean | Eliminate waste, small batches, WIP limits, fast feedback | [DevOps](DevOps-Overview.md) |
+| **Practices** | TDD | Red-Green-Refactor, test pyramid, mocks vs stubs | [Practices](Practices-Overview.md) |
+| | Agile/Scrum | Roles, events, Definition of Done, velocity, user stories | [Practices](Practices-Overview.md) |
+| | Pair programming | Driver/navigator, ping-pong, remote pairing | [Practices](Practices-Overview.md) |
+| | Code reviews | Small PRs, constructive feedback, automate the trivial | [Practices](Practices-Overview.md) |
+| | Security by Design | Least privilege, defense in depth, threat modeling, OWASP | [Practices](Practices-Overview.md) |
+| **Emerging** | Gen AI | Tokens, context window, prompting, hallucination, RAG | [GenAI](GenAI-Overview.md) |
+| | Agentic patterns | Tool calling, ReAct, workflows vs agents, MCP, guardrails, evals | [GenAI](GenAI-Overview.md) |
 
 ---
 
