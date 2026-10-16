@@ -3,15 +3,13 @@
 <p align="center"><i>TDD · Agile/Scrum · Pair Programming · Code Reviews · Security by Design</i></p>
 
 <p align="center">
-
-![Interview Prep](https://img.shields.io/badge/Interview-Prep-E91E63?style=for-the-badge) ![Questions](https://img.shields.io/badge/Questions-60-2ea44f?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-8-555?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Interview-Prep-E91E63?style=for-the-badge" alt="Interview Prep">
+<img src="https://img.shields.io/badge/Questions-60-2ea44f?style=for-the-badge" alt="Questions">
+<img src="https://img.shields.io/badge/Sections-8-555?style=for-the-badge" alt="Sections">
 </p>
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · **Practices** · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <b>Practices</b> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>
 
 > [!TIP]
@@ -545,7 +543,5 @@ Own it, restore service, root-cause (blameless postmortem), add safeguards.
 ---
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · **Practices** · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <b>Practices</b> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>

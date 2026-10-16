@@ -1,14 +1,15 @@
 <h1 align="center">High-Level Overview of All Topics</h1>
 
-<p align="center"><i>One-page map for quick review. Details live in the per-topic files: [Data-Overview.md](Data-Overview.md) · [Frameworks-Overview.md](Frameworks-Overview.md) · [AWS-Overview.md](AWS-Overview.md) · [DevOps-Overview.md](DevOps-Overview.md) · [Practices-Overview.md](Practices-Overview.md) · [GenAI-Overview.md](GenAI-Overview.md)</i></p>
+<p align="center"><i>One-page map for quick review. Details live in the per-topic files: <a href="Data-Overview.md">Data-Overview.md</a> · <a href="Frameworks-Overview.md">Frameworks-Overview.md</a> · <a href="AWS-Overview.md">AWS-Overview.md</a> · <a href="DevOps-Overview.md">DevOps-Overview.md</a> · <a href="Practices-Overview.md">Practices-Overview.md</a> · <a href="GenAI-Overview.md">GenAI-Overview.md</a></i></p>
 
 <p align="center">
-
-![Interview Prep](https://img.shields.io/badge/Interview-Prep-6f42c1?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-5-555?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Interview-Prep-6f42c1?style=for-the-badge" alt="Interview Prep">
+<img src="https://img.shields.io/badge/Sections-5-555?style=for-the-badge" alt="Sections">
 </p>
 
-<p align="center">**All Topics** · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)</p>
+<p align="center">
+<b>All Topics</b> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
+</p>
 
 > [!TIP]
 > One-page map for quick review. Follow the links for the full per-topic sheets.
@@ -124,4 +125,6 @@ Client → API Gateway → Spring Boot (ECS) / Lambda → DBs ←→ RAG / Agent
 
 ---
 
-<p align="center">**All Topics** · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)</p>
+<p align="center">
+<b>All Topics</b> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
+</p>

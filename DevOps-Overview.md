@@ -3,15 +3,13 @@
 <p align="center"><i>Git · Jenkins · CI/CD · Lean Principles</i></p>
 
 <p align="center">
-
-![Interview Prep](https://img.shields.io/badge/Interview-Prep-D24939?style=for-the-badge) ![Questions](https://img.shields.io/badge/Questions-51-2ea44f?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-7-555?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Interview-Prep-D24939?style=for-the-badge" alt="Interview Prep">
+<img src="https://img.shields.io/badge/Questions-51-2ea44f?style=for-the-badge" alt="Questions">
+<img src="https://img.shields.io/badge/Sections-7-555?style=for-the-badge" alt="Sections">
 </p>
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · **DevOps** · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <b>DevOps</b> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>
 
 > [!TIP]
@@ -484,7 +482,5 @@ Credential store/Vault, short-lived OIDC credentials, secret scanning, masked lo
 ---
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · **DevOps** · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <b>DevOps</b> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>

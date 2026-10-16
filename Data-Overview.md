@@ -3,15 +3,13 @@
 <p align="center"><i>Java · Python · SQL · ETL · Data Modeling · Data Warehousing · Spark · Databricks · SQL DB · NoSQL DB · Data Lake · Graph DB</i></p>
 
 <p align="center">
-
-![Interview Prep](https://img.shields.io/badge/Interview-Prep-0A66C2?style=for-the-badge) ![Questions](https://img.shields.io/badge/Questions-143-2ea44f?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-15-555?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Interview-Prep-0A66C2?style=for-the-badge" alt="Interview Prep">
+<img src="https://img.shields.io/badge/Questions-143-2ea44f?style=for-the-badge" alt="Questions">
+<img src="https://img.shields.io/badge/Sections-15-555?style=for-the-badge" alt="Sections">
 </p>
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <b>Data</b> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>
 
 > [!TIP]
@@ -1227,7 +1225,5 @@ Assess/inventory, choose target (lakehouse/warehouse), land data in object stora
 ---
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <b>Data</b> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>

@@ -3,15 +3,13 @@
 <p align="center"><i>Spring Boot · REST APIs · Spring Data JPA · Spring Security · Testing</i></p>
 
 <p align="center">
-
-![Interview Prep](https://img.shields.io/badge/Interview-Prep-6DB33F?style=for-the-badge) ![Questions](https://img.shields.io/badge/Questions-45-2ea44f?style=for-the-badge) ![Sections](https://img.shields.io/badge/Sections-8-555?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Interview-Prep-6DB33F?style=for-the-badge" alt="Interview Prep">
+<img src="https://img.shields.io/badge/Questions-45-2ea44f?style=for-the-badge" alt="Questions">
+<img src="https://img.shields.io/badge/Sections-8-555?style=for-the-badge" alt="Sections">
 </p>
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · **Spring Boot** · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <b>Spring Boot</b> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>
 
 > [!TIP]
@@ -439,7 +437,5 @@ Auth via JWT, least-privilege, validated input, secrets externalized, dependency
 ---
 
 <p align="center">
-
-[All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · **Spring Boot** · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
-
+<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <b>Spring Boot</b> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
 </p>
