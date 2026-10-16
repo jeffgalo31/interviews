@@ -1,16 +1,8 @@
-<h1 align="center">AWS Interview Cheat Sheet</h1>
+# AWS Interview Cheat Sheet
 
-<p align="center"><i>Lambda · RDS · ECS · DynamoDB · API Gateway · S3 · Data & AI services (Glue, Athena, Redshift, Kinesis, Neptune, Bedrock)</i></p>
+*Lambda · RDS · ECS · DynamoDB · API Gateway · S3 · Data & AI services (Glue, Athena, Redshift, Kinesis, Neptune, Bedrock)*
 
-<p align="center">
-<img src="https://img.shields.io/badge/Interview-Prep-FF9900?style=for-the-badge" alt="Interview Prep">
-<img src="https://img.shields.io/badge/Questions-77-2ea44f?style=for-the-badge" alt="Questions">
-<img src="https://img.shields.io/badge/Sections-10-555?style=for-the-badge" alt="Sections">
-</p>
-
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <b>AWS</b> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · **AWS** · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -717,6 +709,4 @@ Right-size, on-demand vs provisioned, S3 lifecycle, Fargate Spot, Savings Plans,
 
 ---
 
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <b>AWS</b> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · **AWS** · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)

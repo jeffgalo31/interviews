@@ -1,16 +1,8 @@
-<h1 align="center">Data Engineering Interview Cheat Sheet</h1>
+# Data Engineering Interview Cheat Sheet
 
-<p align="center"><i>Java · Python · SQL · ETL · Data Modeling · Data Warehousing · Spark · Databricks · SQL DB · NoSQL DB · Data Lake · Graph DB</i></p>
+*Java · Python · SQL · ETL · Data Modeling · Data Warehousing · Spark · Databricks · SQL DB · NoSQL DB · Data Lake · Graph DB*
 
-<p align="center">
-<img src="https://img.shields.io/badge/Interview-Prep-0A66C2?style=for-the-badge" alt="Interview Prep">
-<img src="https://img.shields.io/badge/Questions-143-2ea44f?style=for-the-badge" alt="Questions">
-<img src="https://img.shields.io/badge/Sections-15-555?style=for-the-badge" alt="Sections">
-</p>
-
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <b>Data</b> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -1224,6 +1216,4 @@ Assess/inventory, choose target (lakehouse/warehouse), land data in object stora
 
 ---
 
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <b>Data</b> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · **Data** · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)

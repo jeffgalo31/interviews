@@ -1,16 +1,8 @@
-<h1 align="center">Spring Boot Interview Cheat Sheet</h1>
+# Spring Boot Interview Cheat Sheet
 
-<p align="center"><i>Spring Boot · REST APIs · Spring Data JPA · Spring Security · Testing</i></p>
+*Spring Boot · REST APIs · Spring Data JPA · Spring Security · Testing*
 
-<p align="center">
-<img src="https://img.shields.io/badge/Interview-Prep-6DB33F?style=for-the-badge" alt="Interview Prep">
-<img src="https://img.shields.io/badge/Questions-45-2ea44f?style=for-the-badge" alt="Questions">
-<img src="https://img.shields.io/badge/Sections-8-555?style=for-the-badge" alt="Sections">
-</p>
-
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <b>Spring Boot</b> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · **Spring Boot** · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -436,6 +428,4 @@ Auth via JWT, least-privilege, validated input, secrets externalized, dependency
 
 ---
 
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <b>Spring Boot</b> · <a href="DevOps-Overview.md">DevOps</a> · <a href="Practices-Overview.md">Practices</a> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · **Spring Boot** · [DevOps](DevOps-Overview.md) · [Practices](Practices-Overview.md) · [Gen AI](GenAI-Overview.md)

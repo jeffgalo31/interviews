@@ -1,16 +1,8 @@
-<h1 align="center">Engineering Practices Interview Cheat Sheet</h1>
+# Engineering Practices Interview Cheat Sheet
 
-<p align="center"><i>TDD · Agile/Scrum · Pair Programming · Code Reviews · Security by Design</i></p>
+*TDD · Agile/Scrum · Pair Programming · Code Reviews · Security by Design*
 
-<p align="center">
-<img src="https://img.shields.io/badge/Interview-Prep-E91E63?style=for-the-badge" alt="Interview Prep">
-<img src="https://img.shields.io/badge/Questions-60-2ea44f?style=for-the-badge" alt="Questions">
-<img src="https://img.shields.io/badge/Sections-8-555?style=for-the-badge" alt="Sections">
-</p>
-
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <b>Practices</b> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · **Practices** · [Gen AI](GenAI-Overview.md)
 
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
@@ -542,6 +534,4 @@ Own it, restore service, root-cause (blameless postmortem), add safeguards.
 
 ---
 
-<p align="center">
-<a href="All-Topics-Overview.md">All Topics</a> · <a href="AWS-Overview.md">AWS</a> · <a href="Data-Overview.md">Data</a> · <a href="Frameworks-Overview.md">Spring Boot</a> · <a href="DevOps-Overview.md">DevOps</a> · <b>Practices</b> · <a href="GenAI-Overview.md">Gen AI</a>
-</p>
+**Jump to:** [All Topics](All-Topics-Overview.md) · [AWS](AWS-Overview.md) · [Data](Data-Overview.md) · [Spring Boot](Frameworks-Overview.md) · [DevOps](DevOps-Overview.md) · **Practices** · [Gen AI](GenAI-Overview.md)
