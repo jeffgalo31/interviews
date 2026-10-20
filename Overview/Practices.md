@@ -4,6 +4,8 @@
 
 **Jump to:** [All Topics](All-Topics.md) · [AWS](AWS.md) · [Data](Data.md) · [Spring Boot](Frameworks.md) · [DevOps](DevOps.md) · [Practices](Practices.md) · [Gen AI](GenAI.md)
 
+**Coding practice:** [Java exercises](../Code/java/) (HackerRank-style, runnable in VS Code)
+
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
 
