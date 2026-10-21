@@ -1,8 +1,13 @@
 {
-  "java.project.sourcePaths": ["Code/java/src"],
+  "java.project.sourcePaths": [
+    "Code/java/src"
+  ],
   "java.project.outputPath": "Code/java/out",
-  "files.associations": { "*.sql": "sql" },
+  "files.associations": {
+    "*.sql": "sql"
+  },
   "files.exclude": {
     "Code/java/out": true
-  }
+  },
+  "java.debug.settings.onBuildFailureProceed": true
 }

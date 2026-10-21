@@ -88,10 +88,9 @@ Code/<tech>/<section>/<challenge>/README.md   name, difficulty, section, link, f
 ```
 
 - **SQL:** `solution.sql` (SQLite: creates the sample tables, runs the query) + `solution_hackerrank.sql` (MySQL).
-- **Java** (follow the existing [`java/`](java/) convention): `src/<section>/<challenge>/Solution.java` with a
-  `package <section>.<challenge>;` line (letters/underscores only: `data_structures.java_dequeue`), a
-  `SAMPLE_INPUT` used when nothing is piped in, and comments on every step; `Solution_hackerrank.java` without the
-  package line; `README.md`. Move `src/regex` and `src/dequeue` into their sections when the track is imported.
+- **Java** (done: [`java/`](java/README.md), generator in [`java/_tools/`](java/_tools/)): `src/<section>/<challenge>/`
+  with `package <section>.<challenge>;` (letters/underscores only), `Solution.java` (runnable, falls back to
+  `SAMPLE_INPUT`), `Solution_hackerrank.java` (HackerRank's exact program, no package line) and `README.md`.
 - **Other languages:** same idea: a runnable file that falls back to the sample input, plus the paste copy.
 
 Folder names: the challenge name in lowercase with dashes (`Ollivander's Inventory` -> `ollivanders-inventory`).
@@ -112,3 +111,24 @@ Sections: HackerRank's `track.name` (`Basic Select` -> `basic-select`).
 - Git on the Mac needs delete permission in `Documents` (it removes its own lock files).
 - Claude can't push to GitHub yet: push with **Sync Changes** in VS Code's Source Control.
 - Link the new tech from `Overview/Practices.md` and `Overview/All-Topics.md` ("Coding practice" line).
+
+## Lessons from the Java track
+
+- **Code templates:** `java8_template_head` / `java8_template` / `java8_template_tail` (or `java_template*`) are
+  HackerRank's starter code. Write the full program (head + your code + tail) and wrap your part in
+  `// ---- your code ----` / `// ---- end of your code ----`, so it's clear what to paste if HackerRank locks the rest.
+  `solutions.py` holds one entry per challenge; a check confirms every template line is still in the program.
+- **Runnable version** (made automatically from the HackerRank program): add the `package` line; put the class
+  with `main` first (single-file `java Solution.java` runs the first class); only `Solution` may stay `public`;
+  inject a `static { ... }` block that swaps in `SAMPLE_INPUT` when nothing is piped in (it must be the first member
+  so it runs before `static Scanner` fields); write to `System.out` instead of HackerRank's `OUTPUT_PATH` file;
+  comment out HackerRank's `DoNotTerminate.forbidExit()` (SecurityManager is disabled in newer Java).
+- **Samples:** parse `Sample Input N` / `Sample Output N` (code fences or indented blocks). A statement can *mention*
+  "sample output" without having one: check for the heading, and take missing samples from `body_html`.
+- **Images:** besides `hr-challenge-images`, statements use `s3.amazonaws.com/hr-assets/...` images too.
+- **Tests:** compile each runnable file, run every official sample (piped and with no input), run the single-file
+  launch, and compile every HackerRank copy. Strip the package prefix when the expected output prints class names.
+- **Known HackerRank quirks:** Currency Formatter's symbols depend on the Java version (Java 8: `Rs.`, `￥`);
+  Prime Checker's locked code says `misc.Prime`; Covariant Return Types' diagram says Lotus but the code uses Lily;
+  Java Factory's text says "ordered Fast Food" but the code prints "ordered a Fast Food".
+
