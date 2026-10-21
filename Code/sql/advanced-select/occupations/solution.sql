@@ -11,17 +11,26 @@
 DROP TABLE IF EXISTS OCCUPATIONS;
 CREATE TABLE OCCUPATIONS (Name TEXT, Occupation TEXT);
 INSERT INTO OCCUPATIONS VALUES
-    ('Samantha', 'Doctor'), ('Julia', 'Actor'), ('Maria', 'Actor'), ('Meera', 'Singer'), ('Ashley', 'Professor'),
-    ('Ketty', 'Professor'), ('Christeen', 'Professor'), ('Jane', 'Actor'), ('Jenny', 'Doctor'), ('Priya', 'Singer');
+    ('Samantha', 'Doctor'),
+    ('Julia', 'Actor'),
+    ('Maria', 'Actor'),
+    ('Meera', 'Singer'),
+    ('Ashely', 'Professor'),
+    ('Ketty', 'Professor'),
+    ('Christeen', 'Professor'),
+    ('Jane', 'Actor'),
+    ('Jenny', 'Doctor'),
+    ('Priya', 'Singer');
 
 -- ---------------------------------------------------------------------------
 -- QUERY
--- Expected (HackerRank sample): Jenny Ashley Meera Jane / Samantha Christeen Priya Julia / NULL Ketty NULL Maria
+-- Expected (HackerRank sample): Jenny Ashely Meera Jane / Samantha Christeen Priya Julia / NULL Ketty NULL Maria
 -- ---------------------------------------------------------------------------
 -- ROW_NUMBER() OVER (PARTITION BY Occupation ORDER BY Name) numbers the names 1, 2, 3... inside each occupation, alphabetically.
 -- GROUP BY rn makes one output row per position: row 1 holds the 1st doctor, 1st professor, ...
 -- MAX(CASE WHEN ... THEN Name END) picks the one name for that column; when an occupation has no name at that position it is NULL.
 -- Window functions need MySQL 8 (HackerRank's MySQL) / SQLite 3.25+.
+-- HackerRank's sample table spells the name Ashely while its Sample Output says Ashley (a typo on HackerRank); the local run prints Ashely.
 SELECT MAX(CASE WHEN Occupation = 'Doctor'    THEN Name END) AS Doctor,
        MAX(CASE WHEN Occupation = 'Professor' THEN Name END) AS Professor,
        MAX(CASE WHEN Occupation = 'Singer'    THEN Name END) AS Singer,

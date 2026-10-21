@@ -120,4 +120,6 @@ HackerRank uses MySQL; the local files use SQLite. Most SQL is identical. Where 
 
 ---
 
+How this was built (and how to do the same for another tech): [HACKERRANK-IMPORT.md](../HACKERRANK-IMPORT.md) · generator: [_tools/gen.py](_tools/gen.py)
+
 **Back to:** [All Topics](../../Overview/All-Topics.md) · [Java exercises](../java/)

@@ -12,7 +12,11 @@ Write a query calculating the amount of error (i.e.: $actual - miscalculated$ av
 
 The **EMPLOYEES** table is described as follows:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/12893/1443817108-adc2235c81-1.png" />
+| Column | Type |
+|---|---|
+| ID | Integer |
+| Name | String |
+| Salary | Integer |
 
 **Note:**  *Salary* is per month.
 
@@ -22,7 +26,12 @@ $1000 \lt \text{Salary} \lt 10^5$.
 
 **Sample Input**
 
-![](https://s3.amazonaws.com/hr-challenge-images/12893/1443817161-299cc6eb7f-2.png)
+| ID | Name | Salary |
+|---|---|---|
+| 1 | Kristeen | 1420 |
+| 2 | Ashley | 2006 |
+| 3 | Julia | 2210 |
+| 4 | Maria | 3000 |
 
 **Sample Output**
 
@@ -32,7 +41,20 @@ $1000 \lt \text{Salary} \lt 10^5$.
 
 **Explanation**
 
-> The explanation on HackerRank uses formulas that don't copy as text; see the [problem page](https://www.hackerrank.com/challenges/the-blunder/problem). The Solution section below walks through it.
+The table below shows the salaries without zeros as they were entered by Samantha:
+
+| ID | Name | Salary |
+|---|---|---|
+| 1 | Kristeen | 142 |
+| 2 | Ashley | 26 |
+| 3 | Julia | 221 |
+| 4 | Maria | 3 |
+
+Samantha computes an average salary of 98.00. The actual average salary is 2159.00.
+
+The resulting error between the two calculations is 2159.00 − 98.00 = 2061.00. Since it is equal to the integer 2061, it does not get rounded up.
+
+> Numbers that appear as formulas on HackerRank are filled in here.
 
 ## Solution
 
@@ -47,6 +69,6 @@ FROM EMPLOYEES;
 
 **Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `CEIL(x)` → integer part + 1 if there are decimals.
 
-**Sample data in solution.sql:** the official HackerRank sample, so the output matches the Sample Output above.
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)

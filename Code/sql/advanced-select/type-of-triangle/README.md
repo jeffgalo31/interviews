@@ -15,13 +15,22 @@ Write a query identifying the *type* of each record in the **TRIANGLES** table u
 
 The **TRIANGLES** table is described as follows:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/12887/1443815629-ac2a843fb7-1.png" />
+| Column | Type |
+|---|---|
+| A | Integer |
+| B | Integer |
+| C | Integer |
 
 Each row in the table denotes the lengths of each of a triangle's three sides.
 
 **Sample Input**
 
-![](https://s3.amazonaws.com/hr-challenge-images/12887/1443815827-cbfc1ca12b-2.png)
+| A | B | C |
+|---|---|---|
+| 20 | 20 | 23 |
+| 20 | 20 | 20 |
+| 20 | 21 | 22 |
+| 13 | 14 | 30 |
 
 **Sample Output**
 
@@ -34,7 +43,15 @@ Not A Triangle
 
 **Explanation**
 
-> The explanation on HackerRank uses formulas that don't copy as text; see the [problem page](https://www.hackerrank.com/challenges/what-type-of-triangle/problem). The Solution section below walks through it.
+Values in the tuple (20, 20, 23) form an Isosceles triangle, because A ≡ B.
+
+Values in the tuple (20, 20, 20) form an Equilateral triangle, because A ≡ B ≡ C.
+
+Values in the tuple (20, 21, 22) form a Scalene triangle, because A ≠ B ≠ C.
+
+Values in the tuple (13, 14, 30) cannot form a triangle because the combined value of sides A and B is not larger than that of side C.
+
+> Numbers that appear as formulas on HackerRank are filled in here.
 
 ## Solution
 
@@ -52,6 +69,6 @@ FROM TRIANGLES;
 - A triangle needs every pair of sides to add up to more than the third side.
 - Then all three equal, then any two equal, otherwise all different.
 
-**Sample data in solution.sql:** the official HackerRank sample, so the output matches the Sample Output above.
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)

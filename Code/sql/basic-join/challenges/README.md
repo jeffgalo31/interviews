@@ -4,25 +4,67 @@
 
 ---
 
-Julia asked her students to create some coding challenges. 
+Julia asked her students to create some coding challenges.
 Write a query to print the _hacker\_id_, _name_, and the total number of challenges created by each student. Sort your results by the total number of challenges in descending order. If more than one student created the same number of challenges, then sort the result by _hacker\_id_. If more than one student created the same number of challenges and the count is less than the maximum number of challenges created, then exclude those students from the result.
 
 **Input Format**
 
 The following tables contain challenge data:
 
-- _Hackers:_ The _hacker\_id_ is the id of the hacker, and _name_ is the name of the hacker. <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521004-cb4c077dd3-ScreenShot2016-03-21at6.06.54AM.png"/>
+- _Hackers:_ The _hacker\_id_ is the id of the hacker, and _name_ is the name of the hacker.
 
-- _Challenges:_ The _challenge\_id_ is the id of the challenge, and _hacker\_id_ is the id of the student who created the challenge. <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521079-549341d9ec-ScreenShot2016-03-21at6.07.03AM.png"/>
+| Column | Type |
+|---|---|
+| hacker_id | Integer |
+| name | String |
+
+- _Challenges:_ The _challenge\_id_ is the id of the challenge, and _hacker\_id_ is the id of the student who created the challenge.
+
+| Column | Type |
+|---|---|
+| challenge_id | Integer |
+| hacker_id | Integer |
 
 ----
 
-**Sample Input 0**		
+**Sample Input 0**
 
-_Hackers_ Table: <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521384-34c6866dae-ScreenShot2016-03-21at6.07.15AM.png"/>
-_Challenges_ Table: <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521410-befa8e1cd9-ScreenShot2016-03-21at6.07.25AM.png"/>
+_Hackers_ Table:
 
-**Sample Output 0**		
+| hacker_id | name |
+|---|---|
+| 5077 | Rose |
+| 21283 | Angela |
+| 62743 | Frank |
+| 88255 | Patrick |
+| 96196 | Lisa |
+
+_Challenges_ Table:
+
+| challenge_id | hacker_id |
+|---|---|
+| 61654 | 5077 |
+| 58302 | 21283 |
+| 40587 | 88255 |
+| 29477 | 5077 |
+| 1220 | 21283 |
+| 69514 | 21283 |
+| 46561 | 62743 |
+| 58077 | 62743 |
+| 18483 | 88255 |
+| 76766 | 21283 |
+| 52382 | 5077 |
+| 74467 | 21283 |
+| 33625 | 96196 |
+| 26053 | 88255 |
+| 42665 | 62743 |
+| 12859 | 62743 |
+| 70094 | 21283 |
+| 34599 | 88255 |
+| 54680 | 88255 |
+| 61881 | 5077 |
+
+**Sample Output 0**
 
 	21283 Angela 6
 	88255 Patrick 5
@@ -30,8 +72,40 @@ _Challenges_ Table: <img src="https://s3.amazonaws.com/hr-challenge-images/19506
 
 **Sample Input 1**
 
-_Hackers_ Table: <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521469-87036deea3-ScreenShot2016-03-21at6.07.48AM.png"/>
-_Challenges_ Table: <img src="https://s3.amazonaws.com/hr-challenge-images/19506/1458521490-358215cf0b-ScreenShot2016-03-21at6.07.58AM.png"/>
+_Hackers_ Table:
+
+| hacker_id | name |
+|---|---|
+| 12299 | Rose |
+| 34856 | Angela |
+| 79345 | Frank |
+| 80491 | Patrick |
+| 81041 | Lisa |
+
+_Challenges_ Table:
+
+| challenge_id | hacker_id |
+|---|---|
+| 63963 | 81041 |
+| 63117 | 79345 |
+| 28225 | 34856 |
+| 21989 | 12299 |
+| 4653 | 12299 |
+| 70070 | 79345 |
+| 36905 | 34856 |
+| 61136 | 80491 |
+| 17234 | 12299 |
+| 80308 | 79345 |
+| 40510 | 34856 |
+| 79820 | 80491 |
+| 22720 | 12299 |
+| 21394 | 12299 |
+| 36261 | 34856 |
+| 15334 | 12299 |
+| 71435 | 79345 |
+| 23157 | 34856 |
+| 54102 | 34856 |
+| 69065 | 80491 |
 
 **Sample Output 1**
 
@@ -61,6 +135,6 @@ ORDER BY total DESC, h.hacker_id;
 - Keep a hacker if their count is the **maximum** (ties allowed), **or** if no other hacker has the same count.
 - `(SELECT COUNT(*) ... GROUP BY hacker_id)` is the list of all counts; grouping that list by count and `HAVING COUNT(*) = 1` gives counts used by exactly one hacker.
 
-**Sample data in solution.sql:** rebuilt to reproduce HackerRank's Sample Output (the sample tables are images on HackerRank).
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)

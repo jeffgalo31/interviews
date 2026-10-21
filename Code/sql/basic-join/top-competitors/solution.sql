@@ -6,7 +6,7 @@
 -- HackerRank copy (MySQL): solution_hackerrank.sql
 
 -- ---------------------------------------------------------------------------
--- SETUP: sample data (rebuilt from HackerRank's sample output)
+-- SETUP: sample data (official HackerRank sample)
 -- ---------------------------------------------------------------------------
 DROP TABLE IF EXISTS Hackers;
 DROP TABLE IF EXISTS Difficulty;

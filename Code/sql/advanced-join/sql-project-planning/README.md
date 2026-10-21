@@ -6,7 +6,11 @@
 
 You are given a table, <em>Projects</em>, containing three columns: <em>Task_ID</em>, <em>Start_Date</em> and <em>End_Date</em>. It is guaranteed that the difference between the <em>End_Date</em> and the <em>Start_Date</em> is equal to <em>1</em> day for each row in the table.
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/12894/1443819551-639948acc0-1.png" />
+| Column | Type |
+|---|---|
+| Task_ID | Integer |
+| Start_Date | Date |
+| End_Date | Date |
 
 If the <em>End_Date</em> of the tasks are consecutive, then they are part of the same project. Samantha is interested in finding the total number of different projects completed.
 
@@ -14,7 +18,15 @@ Write a query to output the start and&nbsp;end dates of projects listed by the n
 
 __Sample Input__
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/12894/1443819440-1c40e943a1-2.png" />
+| Task_ID | Start_Date | End_Date |
+|---|---|---|
+| 1 | 2015-10-01 | 2015-10-02 |
+| 2 | 2015-10-02 | 2015-10-03 |
+| 3 | 2015-10-03 | 2015-10-04 |
+| 4 | 2015-10-13 | 2015-10-14 |
+| 5 | 2015-10-14 | 2015-10-15 |
+| 6 | 2015-10-28 | 2015-10-29 |
+| 7 | 2015-10-30 | 2015-10-31 |
 
 __Sample Output__
 
@@ -53,6 +65,6 @@ ORDER BY DATEDIFF(MIN(e.End_Date), s.Start_Date), s.Start_Date;
 
 **Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `DATEDIFF(a, b)` → `julianday(a) - julianday(b)`.
 
-**Sample data in solution.sql:** the official HackerRank sample, so the output matches the Sample Output above.
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)

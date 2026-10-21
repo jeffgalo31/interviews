@@ -6,19 +6,40 @@
 -- HackerRank copy (MySQL): solution_hackerrank.sql
 
 -- ---------------------------------------------------------------------------
--- SETUP: sample data (rebuilt from HackerRank's sample output)
+-- SETUP: sample data (official HackerRank sample)
 -- ---------------------------------------------------------------------------
-DROP TABLE IF EXISTS Wands_Property;
 DROP TABLE IF EXISTS Wands;
-CREATE TABLE Wands_Property (code INTEGER, age INTEGER, is_evil INTEGER);
-INSERT INTO Wands_Property VALUES (1, 45, 0), (2, 40, 0), (3, 4, 1), (4, 20, 0), (5, 17, 0);
-
+DROP TABLE IF EXISTS Wands_Property;
 CREATE TABLE Wands (id INTEGER, code INTEGER, coins_needed INTEGER, power INTEGER);
 INSERT INTO Wands VALUES
-    (1, 4, 3688, 8),  (2, 1, 8000, 10), (3, 3, 1000, 8), (4, 2, 7000, 7),  (5, 1, 6020, 2),
-    (6, 4, 8000, 6),  (7, 5, 10000, 10), (8, 2, 3500, 3), (9, 1, 1647, 10), (10, 4, 504, 5),
-    (11, 2, 7587, 5), (12, 5, 9897, 10), (13, 4, 700, 5), (14, 2, 5408, 1), (15, 2, 6018, 7),
-    (16, 1, 6100, 2), (17, 3, 100, 1),   (18, 2, 3312, 3), (19, 4, 7651, 6), (20, 5, 5689, 3);
+    (1, 4, 3688, 8),
+    (2, 3, 9365, 3),
+    (3, 3, 7187, 10),
+    (4, 3, 734, 8),
+    (5, 1, 6020, 2),
+    (6, 2, 6773, 7),
+    (7, 3, 9873, 9),
+    (8, 3, 7721, 7),
+    (9, 1, 1647, 10),
+    (10, 4, 504, 5),
+    (11, 2, 7587, 5),
+    (12, 5, 9897, 10),
+    (13, 3, 4651, 8),
+    (14, 2, 5408, 1),
+    (15, 2, 6018, 7),
+    (16, 4, 7710, 5),
+    (17, 2, 8798, 7),
+    (18, 2, 3312, 3),
+    (19, 4, 7651, 6),
+    (20, 5, 5689, 3);
+
+CREATE TABLE Wands_Property (code INTEGER, age INTEGER, is_evil INTEGER);
+INSERT INTO Wands_Property VALUES
+    (1, 45, 0),
+    (2, 40, 0),
+    (3, 4, 1),
+    (4, 20, 0),
+    (5, 17, 0);
 
 -- ---------------------------------------------------------------------------
 -- QUERY

@@ -27,7 +27,7 @@ The following tables contain company data:
 
 ## Sample Input
 
-> On HackerRank the sample tables are images; rebuilt here from the problem's explanation.
+> On HackerRank the sample tables are images; transcribed here as text.
 
 **Company**
 

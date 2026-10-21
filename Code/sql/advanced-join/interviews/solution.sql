@@ -6,7 +6,7 @@
 -- HackerRank copy (MySQL): solution_hackerrank.sql
 
 -- ---------------------------------------------------------------------------
--- SETUP: sample data (rebuilt from HackerRank's sample output)
+-- SETUP: sample data (official HackerRank sample)
 -- ---------------------------------------------------------------------------
 DROP TABLE IF EXISTS Contests;
 DROP TABLE IF EXISTS Colleges;
@@ -14,19 +14,45 @@ DROP TABLE IF EXISTS Challenges;
 DROP TABLE IF EXISTS View_Stats;
 DROP TABLE IF EXISTS Submission_Stats;
 CREATE TABLE Contests (contest_id INTEGER, hacker_id INTEGER, name TEXT);
-INSERT INTO Contests VALUES (66406, 17973, 'Rose'), (66556, 79153, 'Angela'), (94828, 80275, 'Frank'), (70000, 12345, 'Lisa');
+INSERT INTO Contests VALUES
+    (66406, 17973, 'Rose'),
+    (66556, 79153, 'Angela'),
+    (94828, 80275, 'Frank');
 
 CREATE TABLE Colleges (college_id INTEGER, contest_id INTEGER);
-INSERT INTO Colleges VALUES (11219, 66406), (11220, 66406), (32473, 66556), (56685, 94828), (60000, 70000);
+INSERT INTO Colleges VALUES
+    (11219, 66406),
+    (32473, 66556),
+    (56685, 94828);
 
 CREATE TABLE Challenges (challenge_id INTEGER, college_id INTEGER);
-INSERT INTO Challenges VALUES (18765, 11219), (47127, 11219), (90000, 11220), (60292, 32473), (72974, 56685), (80000, 60000);
+INSERT INTO Challenges VALUES
+    (18765, 11219),
+    (47127, 11219),
+    (60292, 32473),
+    (72974, 56685);
 
 CREATE TABLE View_Stats (challenge_id INTEGER, total_views INTEGER, total_unique_views INTEGER);
-INSERT INTO View_Stats VALUES (47127, 26, 19), (47127, 15, 14), (18765, 43, 10), (18765, 72, 13), (60292, 11, 10), (72974, 41, 15);
+INSERT INTO View_Stats VALUES
+    (47127, 26, 19),
+    (47127, 15, 14),
+    (18765, 43, 10),
+    (18765, 72, 13),
+    (75516, 35, 17),
+    (60292, 11, 10),
+    (72974, 41, 15),
+    (75516, 75, 11);
 
 CREATE TABLE Submission_Stats (challenge_id INTEGER, total_submissions INTEGER, total_accepted_submissions INTEGER);
-INSERT INTO Submission_Stats VALUES (47127, 27, 10), (47127, 56, 18), (18765, 28, 11), (90000, 0, 0), (72974, 150, 38);
+INSERT INTO Submission_Stats VALUES
+    (75516, 34, 12),
+    (47127, 27, 10),
+    (47127, 56, 18),
+    (75516, 74, 12),
+    (75516, 83, 8),
+    (72974, 68, 24),
+    (72974, 82, 14),
+    (47127, 28, 11);
 
 -- ---------------------------------------------------------------------------
 -- QUERY

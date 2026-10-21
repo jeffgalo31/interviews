@@ -12,13 +12,27 @@
 
 The **OCCUPATIONS** table is described as follows:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/12889/1443816414-2a465532e7-1.png" />
+| Column | Type |
+|---|---|
+| Name | String |
+| Occupation | String |
 
 *Occupation* will only contain one of the following values: **Doctor**, **Professor**, **Singer** or **Actor**.
 
 **Sample Input**
 
-![](https://s3.amazonaws.com/hr-challenge-images/12890/1443817648-1b2b8add45-2.png)
+| Name | Occupation |
+|---|---|
+| Samantha | Doctor |
+| Julia | Actor |
+| Maria | Actor |
+| Meera | Singer |
+| Ashely | Professor |
+| Ketty | Professor |
+| Christeen | Professor |
+| Jane | Actor |
+| Jenny | Doctor |
+| Priya | Singer |
 
 **Sample Output**
 
@@ -30,10 +44,10 @@ NULL     Ketty      NULL   Maria
 
 **Explanation**
 
-The first column is an alphabetically ordered list of Doctor names. 
- The second column is an alphabetically ordered list of Professor names. 
- The third column is an alphabetically ordered list of Singer names. 
- The fourth column is an alphabetically ordered list of Actor names. 
+The first column is an alphabetically ordered list of Doctor names.
+ The second column is an alphabetically ordered list of Professor names.
+ The third column is an alphabetically ordered list of Singer names.
+ The fourth column is an alphabetically ordered list of Actor names.
  The empty cell data for columns with less than the maximum number of names per occupation (in this case, the Professor and Actor columns) are filled with **NULL**  values.
 
 ## Solution
@@ -56,7 +70,8 @@ ORDER BY rn;
 - `GROUP BY rn` makes one output row per position: row 1 holds the 1st doctor, 1st professor, ...
 - `MAX(CASE WHEN ... THEN Name END)` picks the one name for that column; when an occupation has no name at that position it is NULL.
 - Window functions need MySQL 8 (HackerRank's MySQL) / SQLite 3.25+.
+- HackerRank's sample table spells the name **Ashely** while its Sample Output says **Ashley** (a typo on HackerRank); the local run prints Ashely.
 
-**Sample data in solution.sql:** the official HackerRank sample, so the output matches the Sample Output above.
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)

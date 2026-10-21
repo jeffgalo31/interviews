@@ -6,10 +6,10 @@
 
 _P(R)_ represents a pattern drawn by Julia in _R_ rows. The following pattern represents _P(5)_:
 
-    * * * * * 
-    * * * * 
-    * * * 
-    * * 
+    * * * * *
+    * * * *
+    * * *
+    * *
     *
 
 Write a query to print the pattern _P(20)_.

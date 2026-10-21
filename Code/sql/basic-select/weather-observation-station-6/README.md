@@ -10,7 +10,15 @@ Query the list of *CITY* names starting with vowels (i.e., `a`, `e`, `i`, `o`, o
 
 The **STATION** table is described as follows:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" title="Station.jpg" />
+*STATION*
+
+| Field | Type |
+|---|---|
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
 
 where *LAT\_N* is the northern latitude and *LONG\_W* is the western longitude.
 

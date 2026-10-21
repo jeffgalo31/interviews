@@ -17,7 +17,7 @@ Write a query to find the node type of Binary Tree ordered by the value of the n
 
 ## Sample Input
 
-> On HackerRank the schema, sample table and tree are images; rebuilt here (they match the sample output).
+> On HackerRank the schema, sample table and tree are images; transcribed here as text.
 
 | N | P |
 |---|---|

@@ -4,9 +4,18 @@
 
 ---
 
-Query a list of **CITY** and **STATE** from the **STATION** table.  
-The **STATION** table is described as follows:  
-<img src="https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" title="Station.jpg" />
+Query a list of **CITY** and **STATE** from the **STATION** table.
+The **STATION** table is described as follows:
+
+*STATION*
+
+| Field | Type |
+|---|---|
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
 
 where **LAT\_N** is the northern latitude and **LONG\_W** is the western longitude.
 

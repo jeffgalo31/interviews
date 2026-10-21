@@ -9,12 +9,23 @@ Query the *Name* of any student in **STUDENTS** who scored higher than $75$ *Mar
 **Input Format**
 
 The **STUDENTS** table is described as follows:
-<img src="https://s3.amazonaws.com/hr-challenge-images/12896/1443815243-94b941f556-1.png" />
+
+| Column | Type |
+|---|---|
+| ID | Integer |
+| Name | String |
+| Marks | Integer |
+
 The *Name* column only contains uppercase (`A`-`Z`) and lowercase (`a`-`z`) letters.
 
 **Sample Input**
 
-![](https://s3.amazonaws.com/hr-challenge-images/12896/1443815209-cf4b260993-2.png)
+| ID | Name | Marks |
+|---|---|---|
+| 1 | Ashley | 81 |
+| 2 | Samantha | 75 |
+| 4 | Julia | 76 |
+| 3 | Belvet | 84 |
 
 **Sample Output**
 
@@ -26,7 +37,9 @@ Belvet
 
 **Explanation**
 
-> The explanation on HackerRank uses formulas that don't copy as text; see the [problem page](https://www.hackerrank.com/challenges/more-than-75-marks/problem). The Solution section below walks through it.
+Only Ashley, Julia, and Belvet have Marks > 75. If you look at the last three characters of each of their names, there are no duplicates and 'ley' < 'lia' < 'vet'.
+
+> Numbers that appear as formulas on HackerRank are filled in here.
 
 ## Solution
 
@@ -41,6 +54,6 @@ ORDER BY SUBSTR(NAME, -3), ID;
 - Second sort key `ID` breaks ties when two names end the same way.
 - `> 75` excludes Samantha's exact 75.
 
-**Sample data in solution.sql:** the official HackerRank sample, so the output matches the Sample Output above.
+**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
 
 Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
