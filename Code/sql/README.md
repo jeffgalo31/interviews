@@ -6,6 +6,7 @@ HackerRank-style SQL exercises. Each exercise has its own folder.
 |---|---|---|
 | [The PADS](the-pads/) | Advanced Select: CONCAT, GROUP BY, ORDER BY | [README](the-pads/README.md) · [solution.sql](the-pads/solution.sql) · [HackerRank copy](the-pads/solution_hackerrank.sql) |
 | [New Companies](new-companies/) | Advanced Select: COUNT(DISTINCT), correlated subqueries | [README](new-companies/README.md) · [solution.sql](new-companies/solution.sql) · [HackerRank copy](new-companies/solution_hackerrank.sql) |
+| [Binary Tree Nodes](binary-tree-nodes/) | Advanced Select: CASE, IN subquery, NULL pitfalls | [README](binary-tree-nodes/README.md) · [solution.sql](binary-tree-nodes/solution.sql) · [HackerRank copy](binary-tree-nodes/solution_hackerrank.sql) |
 
 ## Files in each exercise
 
