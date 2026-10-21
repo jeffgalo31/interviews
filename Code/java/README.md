@@ -27,4 +27,4 @@ Create `src/<name>/Solution.java` starting with `package <name>;`, plus a `READM
 
 ---
 
-**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md)
+**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [SQL exercises](../sql/)
