@@ -1,0 +1,8 @@
+{
+  "java.project.sourcePaths": ["Code/java/src"],
+  "java.project.outputPath": "Code/java/out",
+  "files.associations": { "*.sql": "sql" },
+  "files.exclude": {
+    "Code/java/out": true
+  }
+}

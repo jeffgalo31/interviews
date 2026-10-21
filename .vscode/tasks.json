@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Java file",
+      "type": "shell",
+      "command": "java",
+      "args": ["${file}"],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run SQL file (SQLite)",
+      "type": "shell",
+      "command": "sqlite3 -header -column :memory: < \"${file}\"",
+      "presentation": { "reveal": "always", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}
