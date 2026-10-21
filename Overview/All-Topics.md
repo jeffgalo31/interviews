@@ -6,6 +6,8 @@
 
 **Coding practice:** [Java exercises](../Code/java/) · [SQL exercises](../Code/sql/) · [React exercises](../Code/react/) (HackerRank-style, runnable in VS Code)
 
+**Behavioral:** [Behavioral interview questions](../Behavior/Behavioral-Interview-Questions.md) (12 competencies, questions and probes, from a Staff Software Engineer guide)
+
 <details>
 <summary><b>📑 Table of contents</b></summary>
 
