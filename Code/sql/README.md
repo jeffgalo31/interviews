@@ -5,6 +5,7 @@ HackerRank-style SQL exercises. Each exercise has its own folder.
 | Exercise | Topic | Files |
 |---|---|---|
 | [The PADS](the-pads/) | Advanced Select: CONCAT, GROUP BY, ORDER BY | [README](the-pads/README.md) · [solution.sql](the-pads/solution.sql) · [HackerRank copy](the-pads/solution_hackerrank.sql) |
+| [New Companies](new-companies/) | Advanced Select: COUNT(DISTINCT), correlated subqueries | [README](new-companies/README.md) · [solution.sql](new-companies/solution.sql) · [HackerRank copy](new-companies/solution_hackerrank.sql) |
 
 ## Files in each exercise
 
