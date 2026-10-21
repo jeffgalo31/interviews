@@ -1,14 +1,21 @@
+<!-- study-layout -->
 # Top Competitors
 
-**Difficulty:** Medium · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/full-score/problem)
+🟡 **Medium** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/full-score/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Julia just finished conducting a coding contest, and she needs your help assembling the leaderboard! Write a query to print the respective _hacker\_id_ and _name_ of hackers who achieved full scores for *more than one* challenge. Order your output in descending order by the total number of challenges in which the hacker earned a full score. If more than one hacker received full scores in same number of challenges, then sort them by ascending _hacker\_id_.
 
 ----
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables contain contest data:
 
@@ -45,7 +52,9 @@ The following tables contain contest data:
 
 ----
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 Hackers Table:
 
@@ -110,13 +119,13 @@ Hackers Table:
 | 84162 | 83082 | 4810 | 40 |
 | 97431 | 90411 | 71055 | 30 |
 
-**Sample Output**
+**Output**
 
 ```
 90411 Joe
 ```
 
-**Explanation**
+**Why**
 
 Hacker 86870 got a score of 30 for challenge 71055 with a difficulty level of 2, so 86870 earned a full score for this challenge.
 
@@ -128,7 +137,12 @@ Only hacker 90411 managed to earn a full score for more than one challenge, so w
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Chain the joins: submission → its challenge → that challenge's difficulty (max score) → the hacker.
+
+### ✍️ The query
 
 ```sql
 SELECT h.hacker_id, h.name
@@ -142,10 +156,20 @@ HAVING COUNT(DISTINCT s.challenge_id) > 1
 ORDER BY COUNT(DISTINCT s.challenge_id) DESC, h.hacker_id;
 ```
 
-- Chain the joins: submission → its challenge → that challenge's difficulty (max score) → the hacker.
+### 🔍 How it works
+
 - `WHERE s.score = d.score` keeps only full-score submissions.
 - `HAVING` filters groups (after counting): more than one full-score challenge.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [The Report](../the-report/README.md) · [🗄️ All SQL exercises](../../README.md) · [Ollivander's Inventory](../ollivanders-inventory/README.md) ➡️

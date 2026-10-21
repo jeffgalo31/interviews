@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Inheritance I
 
-**Difficulty:** Easy · **Section:** Object Oriented Programming · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-inheritance-1/problem)
+🟢 **Easy** · 📁 **Object Oriented Programming** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-inheritance-1/problem)
+
+**On this page:** [📝 Problem](#-problem) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Using *inheritance*, one class can acquire the properties of others. Consider the following *Animal* class:
 
@@ -50,9 +55,12 @@ The code above is provided for you in your editor. You must add a *sing* method 
     I am flying
     I am singing
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `Bird extends Animal`, so a Bird can `walk()` without declaring it.
+
+### ✍️ The code you write
 
 ```java
 void sing()
@@ -61,10 +69,17 @@ void sing()
 }
 ```
 
-- `Bird extends Animal`, so a Bird can `walk()` without declaring it.
+### 🔍 How it works
+
 - Add `sing()` to `Bird`; `main` already calls it.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/object_oriented_programming/java_inheritance_i/Solution.java` from the `java` folder.
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/object_oriented_programming/java_inheritance_i/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Priority Queue](../../data_structures/java_priority_queue/README.md) · [☕ All Java exercises](../../../README.md) · [Java Inheritance II](../java_inheritance_ii/README.md) ➡️

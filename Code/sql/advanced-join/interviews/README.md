@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Interviews
 
-**Difficulty:** Hard · **Section:** Advanced Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/interviews/problem)
+🔴 **Hard** · 📁 **Advanced Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/interviews/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Samantha interviews many candidates from different colleges using coding challenges and contests. Write a query to print the _contest\_id_, _hacker\_id_, _name_, and the sums of _total\_submissions_, _total\_accepted\_submissions_, _total\_views_, and _total\_unique\_views_ for each contest sorted by _contest\_id_. Exclude the contest from the result if all four sums are $0$.
 
@@ -10,7 +15,9 @@ Samantha interviews many candidates from different colleges using coding challen
 
 ----
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables hold interview data:
 
@@ -54,7 +61,9 @@ The following tables hold interview data:
 
 ----
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 Contests Table:
 
@@ -107,7 +116,7 @@ Contests Table:
 | 72974 | 82 | 14 |
 | 47127 | 28 | 11 |
 
-**Sample Output**
+**Output**
 
 ```
 66406 17973 Rose 111 39 156 56
@@ -115,7 +124,7 @@ Contests Table:
 94828 80275 Frank 150 38 41 15
 ```
 
-**Explanation**
+**Why**
 
 The contest 66406 is used in the college 11219. In this college 11219, challenges 18765 and 47127 are asked, so from the view and submission stats:
 
@@ -128,7 +137,12 @@ Similarly, we can find the sums for contests 66556 and 94828.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Path: contest → colleges → challenges → stats.
+
+### ✍️ The query
 
 ```sql
 SELECT c.contest_id, c.hacker_id, c.name,
@@ -148,11 +162,21 @@ HAVING SUM(COALESCE(s.ts, 0)) + SUM(COALESCE(s.tas, 0)) + SUM(COALESCE(v.tv, 0))
 ORDER BY c.contest_id;
 ```
 
-- Path: contest → colleges → challenges → stats.
+### 🔍 How it works
+
 - **Aggregate each stats table per challenge first** (the subqueries). Joining both raw stats tables directly would multiply rows and inflate the sums.
 - `LEFT JOIN` + `COALESCE(..., 0)`: challenges without stats count as 0 instead of disappearing.
 - `HAVING ... > 0` drops contests where all four sums are 0.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Symmetric Pairs](../symmetric-pairs/README.md) · [🗄️ All SQL exercises](../../README.md) · [15 Days of Learning SQL](../15-days-of-learning-sql/README.md) ➡️

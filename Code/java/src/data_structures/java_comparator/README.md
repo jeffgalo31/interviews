@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Comparator
 
-**Difficulty:** Medium · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-comparator/problem)
+🟡 **Medium** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-comparator/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Comparators are used to compare two objects. In this challenge, you'll create a comparator and use it to sort an array.
 
@@ -10,24 +15,28 @@ The *Player* class is provided for you in your editor. It has $2$ fields: a $nam
 
 Given an array of $n$ *Player* objects, write a comparator that sorts them in order of decreasing score; if $2$ or more players have the same score, sort those players alphabetically by name. To do this, you must create a *Checker* class that implements the *Comparator* interface, then write an *int compare(Player a, Player b)* method implementing the [Comparator.compare(T o1, T o2)](https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html#compare(T,%20T)) method.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 Input from stdin is handled by the locked stub code in the *Solution* class.
 
 The first line contains an integer, $n$, denoting the number of players.
 Each of the $n$ subsequent lines contains a player's $name$ and $score$, respectively.
 
-**Constraints**
+### Constraints
 
 - $0 \le score \le 1000$
 - $2$ players can have the same name.
 - Player names consist of lowercase English letters.
 
-**Output Format**
+### Output format
 
 You are not responsible for printing any output to stdout. The locked stub code in *Solution* will create a *Checker* object, use it to sort the *Player* array, and print each sorted element.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
@@ -38,7 +47,7 @@ aakansha 75
 aleksa 150
 ```
 
-**Sample Output**
+**Output**
 
 ```
 aleksa 150
@@ -48,9 +57,12 @@ aakansha 75
 heraldo 50
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `compare` returns negative if `a` goes first, positive if `b` goes first, 0 if equal.
+
+### ✍️ The code you write
 
 ```java
 class Checker implements Comparator<Player> {
@@ -64,11 +76,18 @@ class Checker implements Comparator<Player> {
 }
 ```
 
-- `compare` returns negative if `a` goes first, positive if `b` goes first, 0 if equal.
+### 🔍 How it works
+
 - Swapping the arguments (`Integer.compare(b.score, a.score)`) sorts scores from high to low.
 - Ties are broken by name with `compareTo` (alphabetical).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_comparator/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_comparator/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Generics](../java_generics/README.md) · [☕ All Java exercises](../../../README.md) · [Java Sort](../java_sort/README.md) ➡️

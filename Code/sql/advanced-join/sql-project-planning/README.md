@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # SQL Project Planning
 
-**Difficulty:** Medium · **Section:** Advanced Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/sql-projects/problem)
+🟡 **Medium** · 📁 **Advanced Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/sql-projects/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are given a table, <em>Projects</em>, containing three columns: <em>Task_ID</em>, <em>Start_Date</em> and <em>End_Date</em>. It is guaranteed that the difference between the <em>End_Date</em> and the <em>Start_Date</em> is equal to <em>1</em> day for each row in the table.
 
@@ -16,7 +21,9 @@ If the <em>End_Date</em> of the tasks are consecutive, then they are part of the
 
 Write a query to output the start and&nbsp;end dates of projects listed by the number of days it took to complete the project in ascending order. If there is more than one project that have the same number of completion days, then order by the start date of the project.
 
-__Sample Input__
+## 🧪 Example
+
+**Input**
 
 | Task_ID | Start_Date | End_Date |
 |---|---|---|
@@ -28,7 +35,7 @@ __Sample Input__
 | 6 | 2015-10-28 | 2015-10-29 |
 | 7 | 2015-10-30 | 2015-10-31 |
 
-__Sample Output__
+**Output**
 
     2015-10-28 2015-10-29
     2015-10-30 2015-10-31
@@ -36,7 +43,8 @@ __Sample Output__
     2015-10-01 2015-10-04
 
 <br>
-__Explanation__
+
+**Why**
 
 The example describes following <em>four</em> projects:
 
@@ -47,7 +55,12 @@ The example describes following <em>four</em> projects:
 	<li><em>Project 4</em>: Only task&nbsp;<em>7</em>&nbsp;is part of the project. Thus, the start date of project is&nbsp;<em>2015-10-30</em>&nbsp;and end date is&nbsp;<em>2015-10-31</em>, so it took&nbsp;<em>1 day</em>&nbsp;to complete the project.</li>
 </ul>
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** A project **starts** on a Start_Date that is nobody's End_Date (no task right before it).
+
+### ✍️ The query
 
 ```sql
 SELECT s.Start_Date, MIN(e.End_Date)
@@ -58,13 +71,24 @@ GROUP BY s.Start_Date
 ORDER BY DATEDIFF(MIN(e.End_Date), s.Start_Date), s.Start_Date;
 ```
 
-- A project **starts** on a Start_Date that is nobody's End_Date (no task right before it).
+### 🔍 How it works
+
 - A project **ends** on an End_Date that is nobody's Start_Date (no task right after it).
 - Pair each start with the **first** end after it (`MIN`).
 - Sort by length in days (`DATEDIFF` in MySQL, `julianday` difference in SQLite), then by start date.
 
-**Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `DATEDIFF(a, b)` → `julianday(a) - julianday(b)`.
+> [!NOTE]
+> **Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `DATEDIFF(a, b)` → `julianday(a) - julianday(b)`.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Contest Leaderboard](../../basic-join/contest-leaderboard/README.md) · [🗄️ All SQL exercises](../../README.md) · [Placements](../placements/README.md) ➡️

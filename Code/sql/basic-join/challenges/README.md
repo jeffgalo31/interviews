@@ -1,13 +1,20 @@
+<!-- study-layout -->
 # Challenges
 
-**Difficulty:** Medium · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/challenges/problem)
+🟡 **Medium** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/challenges/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Julia asked her students to create some coding challenges.
 Write a query to print the _hacker\_id_, _name_, and the total number of challenges created by each student. Sort your results by the total number of challenges in descending order. If more than one student created the same number of challenges, then sort the result by _hacker\_id_. If more than one student created the same number of challenges and the count is less than the maximum number of challenges created, then exclude those students from the result.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables contain challenge data:
 
@@ -27,7 +34,11 @@ The following tables contain challenge data:
 
 ----
 
-**Sample Input 0**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 _Hackers_ Table:
 
@@ -64,13 +75,15 @@ _Challenges_ Table:
 | 54680 | 88255 |
 | 61881 | 5077 |
 
-**Sample Output 0**
+**Output**
 
 	21283 Angela 6
 	88255 Patrick 5
 	96196 Lisa 1
 
-**Sample Input 1**
+### Example 2
+
+**Input**
 
 _Hackers_ Table:
 
@@ -107,7 +120,7 @@ _Challenges_ Table:
 | 54102 | 34856 |
 | 69065 | 80491 |
 
-**Sample Output 1**
+**Output**
 
 	12299 Rose 6
 	34856 Angela 6
@@ -115,7 +128,12 @@ _Challenges_ Table:
 	80491 Patrick 3
 	81041 Lisa 1
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Count challenges per hacker.
+
+### ✍️ The query
 
 ```sql
 SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS total
@@ -131,10 +149,20 @@ HAVING total = (SELECT MAX(cnt)
 ORDER BY total DESC, h.hacker_id;
 ```
 
-- Count challenges per hacker.
+### 🔍 How it works
+
 - Keep a hacker if their count is the **maximum** (ties allowed), **or** if no other hacker has the same count.
 - `(SELECT COUNT(*) ... GROUP BY hacker_id)` is the list of all counts; grouping that list by count and `HAVING COUNT(*) = 1` gives counts used by exactly one hacker.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Ollivander's Inventory](../ollivanders-inventory/README.md) · [🗄️ All SQL exercises](../../README.md) · [Contest Leaderboard](../contest-leaderboard/README.md) ➡️

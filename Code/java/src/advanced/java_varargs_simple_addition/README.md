@@ -1,22 +1,31 @@
+<!-- study-layout -->
 # Java Varargs - Simple Addition
 
-**Difficulty:** Easy · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/simple-addition-varargs/problem)
+🟢 **Easy** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/simple-addition-varargs/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are given a class *Solution* and its *main* method in the editor. <br>Your task is to create the class *Add* and the required methods so that the code prints the *sum of the numbers* passed to the function *add*.
 
 **Note:** Your *add* method in the *Add* class must print the *sum* as given in the *Sample Output*
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 There are six lines of input, each containing an integer.
 
-**Output Format**
+### Output format
 
 There will be only four lines of output. Each line contains the sum of the *integers* passed as the parameters to *add* in the *main* method.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 1
@@ -27,7 +36,7 @@ There will be only four lines of output. Each line contains the sum of the *inte
 6
 ```
 
-**Sample Output**
+**Output**
 
 ```
 1+2=3
@@ -36,9 +45,12 @@ There will be only four lines of output. Each line contains the sum of the *inte
 1+2+3+4+5+6=21
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `int... numbers` (varargs) accepts 2, 3, 5 or 6 arguments with a **single** method; inside, `numbers` is an `int[]`.
+
+### ✍️ The code you write
 
 ```java
 class Add {
@@ -55,11 +67,18 @@ class Add {
 }
 ```
 
-- `int... numbers` (varargs) accepts 2, 3, 5 or 6 arguments with a **single** method; inside, `numbers` is an `int[]`.
+### 🔍 How it works
+
 - The locked code rejects overloading, so one varargs method is the only way.
 - Print `1+2=3`: numbers joined by `+`, then `=` and the sum.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/java_varargs_simple_addition/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/java_varargs_simple_addition/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Exception Handling](../../exception_handling/java_exception_handling/README.md) · [☕ All Java exercises](../../../README.md) · [Java Reflection - Attributes](../java_reflection_attributes/README.md) ➡️

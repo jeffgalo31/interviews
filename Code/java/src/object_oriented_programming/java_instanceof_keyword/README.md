@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Instanceof keyword
 
-**Difficulty:** Easy · **Section:** Object Oriented Programming · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-instanceof-keyword/problem)
+🟢 **Easy** · 📁 **Object Oriented Programming** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-instanceof-keyword/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 The Java *instanceof* operator is used to test if the object or instance is an instanceof the specified type.
 
@@ -18,7 +23,9 @@ But some lines of the code are missing, and you have to fix it by modifying only
 
 To restore the original code in the editor, click on the top left icon in the editor and create a new buffer.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
     5
     Student
@@ -27,13 +34,16 @@ To restore the original code in the editor, click on the top left icon in the ed
     Student
     Hacker
 
-**Sample Output**
+**Output**
 
     3 1 1
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `x instanceof Type` is true when the object is that class (or a subclass of it).
+
+### ✍️ The code you write
 
 ```java
 if(element instanceof Student)
@@ -44,10 +54,17 @@ if(element instanceof Hacker)
    c++;
 ```
 
-- `x instanceof Type` is true when the object is that class (or a subclass of it).
+### 🔍 How it works
+
 - Only the three `if` conditions change (the challenge allows editing exactly 3 lines).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/object_oriented_programming/java_instanceof_keyword/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/object_oriented_programming/java_instanceof_keyword/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Method Overriding 2 (Super Keyword)](../java_method_overriding_2_super_keyword/README.md) · [☕ All Java exercises](../../../README.md) · [Java Iterator](../java_iterator/README.md) ➡️

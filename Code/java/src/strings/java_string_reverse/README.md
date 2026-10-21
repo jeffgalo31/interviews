@@ -1,43 +1,62 @@
+<!-- study-layout -->
 # Java String Reverse
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-string-reverse/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-string-reverse/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.
 
 ***
 Given a string $A$, print ``Yes`` if it is a palindrome, print ``No`` otherwise.
 
-**Constraints**
+## 📥 Input & output
+
+### Constraints
 
 * $A$ will consist at most $50$ lower case english letters.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 madam
 ```
 
-**Sample Output**
+**Output**
 
 ```
 Yes
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `StringBuilder.reverse()` reverses the text.
+
+### ✍️ The code you write
 
 ```java
 String reversed = new StringBuilder(A).reverse().toString();
 System.out.println(A.equals(reversed) ? "Yes" : "No");
 ```
 
-- `StringBuilder.reverse()` reverses the text.
+### 🔍 How it works
+
 - A palindrome equals its reverse; compare strings with `equals`, never `==`.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_string_reverse/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_string_reverse/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Substring Comparisons](../java_substring_comparisons/README.md) · [☕ All Java exercises](../../../README.md) · [Java Anagrams](../java_anagrams/README.md) ➡️

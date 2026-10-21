@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Valid Username Regular Expression
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/valid-username-checker/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/valid-username-checker/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are updating the username policy on your company's internal networking platform. According to the policy, a username is considered valid if all the following constraints are satisfied:
 
@@ -22,20 +27,24 @@ For example:
 
 Update the value of *regularExpression* field in the *UsernameValidator* class so that the regular expression only matches with valid usernames.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line of input contains an integer $n$, describing the total number of usernames. Each of the next $n$ lines contains a string describing the username. The locked stub code reads the inputs and validates the username.
 
-**Constraints**
+### Constraints
 
 - $1 \le n \le 100$
 - The username consists of any printable characters.
 
-**Output Format**
+### Output format
 
 For each of the usernames, the locked stub code prints `Valid` if the username is valid; otherwise `Invalid` each on a new line.
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 8
@@ -49,7 +58,7 @@ Julia@007
 _Julia007
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 Invalid
@@ -62,13 +71,16 @@ Invalid
 Invalid
 ```
 
-**Explanation 0**
+**Why**
 
 Refer diagram in the challenge statement.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `[A-Za-z]`: the first character must be a letter.
+
+### ✍️ The code you write
 
 ```java
 class UsernameValidator {
@@ -77,11 +89,18 @@ class UsernameValidator {
 }
 ```
 
-- `[A-Za-z]`: the first character must be a letter.
+### 🔍 How it works
+
 - `\w{7,29}`: then 7 to 29 more letters, digits or underscores (`\w`), so the total length is 8 to 30.
 - `matches()` must match the whole string; `^` and `$` make that explicit.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/valid_username_regular_expression/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/valid_username_regular_expression/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Regex 2 - Duplicate Words](../java_regex_2_duplicate_words/README.md) · [☕ All Java exercises](../../../README.md) · [Tag Content Extractor](../tag_content_extractor/README.md) ➡️

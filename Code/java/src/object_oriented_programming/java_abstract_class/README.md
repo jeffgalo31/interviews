@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Abstract Class
 
-**Difficulty:** Easy · **Section:** Object Oriented Programming · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-abstract-class/problem)
+🟢 **Easy** · 📁 **Object Oriented Programming** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-abstract-class/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 A Java abstract class is a class that can't be instantiated. That means you cannot create new instances of an abstract class. It works as a base for subclasses. You should learn about Java Inheritance before attempting this challenge.
 
@@ -32,17 +37,22 @@ In the editor, we have provided the abstract *Book* class and a *Main* class. In
 
 Your class mustn't be public.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
     A tale of two cities
 
-**Sample Output**
+**Output**
 
     The title is: A tale of two cities
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** An abstract class can't be created with `new`; a concrete subclass must implement its abstract methods.
+
+### ✍️ The code you write
 
 ```java
 class MyBook extends Book {
@@ -53,10 +63,17 @@ class MyBook extends Book {
 }
 ```
 
-- An abstract class can't be created with `new`; a concrete subclass must implement its abstract methods.
+### 🔍 How it works
+
 - `MyBook` implements `setTitle` by storing into the inherited `title` field; `getTitle` is inherited.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/object_oriented_programming/java_abstract_class/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/object_oriented_programming/java_abstract_class/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Inheritance II](../java_inheritance_ii/README.md) · [☕ All Java exercises](../../../README.md) · [Java Interface](../java_interface/README.md) ➡️

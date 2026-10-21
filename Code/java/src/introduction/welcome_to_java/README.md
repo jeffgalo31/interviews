@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Welcome to Java!
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/welcome-to-java/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/welcome-to-java/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Welcome to the world of Java! In this challenge, we practice printing to stdout.
 
@@ -13,36 +18,47 @@ System.out.println("Hello, World.");
 System.out.println("Hello, Java.");
 ```
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 There is no input for this challenge.
 
-**Output Format**
+### Output format
 
 You must print two lines of output:
 
 1. Print `Hello, World.` on the first line.
 2. Print `Hello, Java.` on the second line.
 
-**Sample Output**
+## 🧪 Example
+
+**Output**
 
 ```
 Hello, World.
 Hello, Java.
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `System.out.println` prints the text and then a new line.
+
+### ✍️ The code you write
 
 ```java
 System.out.println("Hello, World.");
 System.out.println("Hello, Java.");
 ```
 
-- `System.out.println` prints the text and then a new line.
+## 📂 Files
 
-**Files**
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/welcome_to_java/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/welcome_to_java/Solution.java` from the `java` folder.
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+---
+
+[☕ All Java exercises](../../../README.md) · [ Java Stdin and Stdout I](../java_stdin_and_stdout_i/README.md) ➡️

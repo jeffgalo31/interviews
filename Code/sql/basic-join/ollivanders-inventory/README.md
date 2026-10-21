@@ -1,14 +1,21 @@
+<!-- study-layout -->
 # Ollivander's Inventory
 
-**Difficulty:** Medium · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/harry-potter-and-wands/problem)
+🟡 **Medium** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/harry-potter-and-wands/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Harry Potter and his friends are at Ollivander's with Ron, finally replacing Charlie's old broken wand.
 
 Hermione decides the best way to choose is by determining the minimum number of gold galleons needed to buy each *non-evil* wand of high power and age. Write a query to print the _id_, _age_, _coins\_needed_, and _power_ of the wands that Ron's interested in, sorted in order of descending _power_. If more than one wand has same power, sort the result in order of descending _age_.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables contain data on the wands in Ollivander's inventory:
 
@@ -31,7 +38,9 @@ The following tables contain data on the wands in Ollivander's inventory:
 
 ----
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 Wands Table:
 
@@ -68,7 +77,7 @@ Wands Table:
 | 4 | 20 | 0 |
 | 5 | 17 | 0 |
 
-**Sample Output**
+**Output**
 
 ```
 9 45 1647 10
@@ -84,7 +93,7 @@ Wands Table:
 14 40 5408 1
 ```
 
-**Explanation**
+**Why**
 
 The data for wands of age 45 (code 1):
 
@@ -137,7 +146,12 @@ The data for wands of age 17 (code 5):
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Join each wand to its property row to get `age` and `is_evil`.
+
+### ✍️ The query
 
 ```sql
 SELECT w.id, p.age, w.coins_needed, w.power
@@ -154,10 +168,20 @@ WHERE p.is_evil = 0
 ORDER BY w.power DESC, p.age DESC;
 ```
 
-- Join each wand to its property row to get `age` and `is_evil`.
+### 🔍 How it works
+
 - For every (age, power) combination keep only the cheapest wand: the subquery finds that minimum for the current row's age and power.
 - Exclude evil wands; sort by power, then age, both descending.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Top Competitors](../top-competitors/README.md) · [🗄️ All SQL exercises](../../README.md) · [Challenges](../challenges/README.md) ➡️

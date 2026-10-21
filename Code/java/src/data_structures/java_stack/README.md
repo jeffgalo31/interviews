@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Stack
 
-**Difficulty:** Medium · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-stack/problem)
+🟡 **Medium** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-stack/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 In computer science, a stack or LIFO (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the last element that was added.(Wikipedia)
 
@@ -17,17 +22,21 @@ Examples of some unbalanced strings are: "{}(",  "({)}",  "[[",  "}{" etc.<br>
 
 Given a string, determine if it is balanced or not.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 There will be multiple lines in the input file, each having a single non-empty string. You should read input till end-of-file.
 
 The part of the code that handles input operation is already provided in the editor.
 
-**Output Format**
+### Output format
 
 For each case, print 'true' if the string is balanced, 'false' otherwise.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 {}()
@@ -36,7 +45,7 @@ For each case, print 'true' if the string is balanced, 'false' otherwise.
 []
 ```
 
-**Sample Output**
+**Output**
 
 ```
 true
@@ -45,9 +54,12 @@ false
 true
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Push every opening bracket on a stack; a closing bracket must match the **most recent** opener (pop).
+
+### ✍️ The code you write
 
 ```java
 System.out.println(isBalanced(input));
@@ -69,12 +81,19 @@ static boolean isBalanced(String s) {
 }
 ```
 
-- Push every opening bracket on a stack; a closing bracket must match the **most recent** opener (pop).
+### 🔍 How it works
+
 - Fail on a closer when the stack is empty, or when the pair doesn't match.
 - At the end the stack must be empty (nothing left open).
 - `ArrayDeque` is the recommended stack in Java (the old `Stack` class is slower).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_stack/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_stack/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Map](../java_map/README.md) · [☕ All Java exercises](../../../README.md) · [Java Hashset](../java_hashset/README.md) ➡️

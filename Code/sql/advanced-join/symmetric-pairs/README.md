@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Symmetric Pairs
 
-**Difficulty:** Medium · **Section:** Advanced Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/symmetric-pairs/problem)
+🟡 **Medium** · 📁 **Advanced Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/symmetric-pairs/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are given a table, <em>Functions</em>, containing two columns: <em>X&nbsp;</em>and <em>Y</em>.
 
@@ -15,7 +20,9 @@ Two pairs <em>(X<sub>1</sub>, Y<sub>1</sub>)</em> and <em>(X<sub>2</sub>, Y<sub>
 
 Write a query to output all such <em>symmetric</em> <em>pairs</em> in ascending order by the value of <em>X</em>.  List the rows such that <em>X<sub>1</sub> &le; Y<sub>1</sub></em>.
 
-__Sample Input__
+## 🧪 Example
+
+**Input**
 
 | X | Y |
 |---|---|
@@ -26,13 +33,18 @@ __Sample Input__
 | 22 | 23 |
 | 21 | 20 |
 
-__Sample Output__
+**Output**
 
     20 20
     20 21
     22 23
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Self-join: find a row whose (X, Y) is this row flipped.
+
+### ✍️ The query
 
 ```sql
 SELECT f1.X, f1.Y
@@ -43,10 +55,20 @@ HAVING f1.X < f1.Y OR COUNT(*) > 1
 ORDER BY f1.X;
 ```
 
-- Self-join: find a row whose (X, Y) is this row flipped.
+### 🔍 How it works
+
 - `X < Y` keeps one of each pair (20 21, not 21 20).
 - When X = Y a row matches **itself**, so it only counts if that pair appears at least twice: `COUNT(*) > 1`.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Placements](../placements/README.md) · [🗄️ All SQL exercises](../../README.md) · [Interviews](../interviews/README.md) ➡️

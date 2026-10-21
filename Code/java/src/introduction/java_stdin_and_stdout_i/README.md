@@ -1,8 +1,13 @@
-#  Java Stdin and Stdout I
+<!-- study-layout -->
+# Java Stdin and Stdout I
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-stdin-and-stdout-1/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-stdin-and-stdout-1/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Most HackerRank challenges require you to read input from [stdin](https://en.wikipedia.org/wiki/Standard_streams#Standard_input_.28stdin.29) (standard input) and write output to [stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29) (standard output).
 
@@ -29,14 +34,19 @@ Our code will print:
 
 Alternatively, you can use the [BufferedReader class](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html).
 
-**Task**
+### Task
+
 In this challenge, you must read $3$ integers from stdin and then print them to stdout. Each integer must be printed on a new line. To make the problem a little easier, a portion of the code is provided for you in the editor below.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 There are $3$ lines of input, and each line contains a single integer.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 42
@@ -44,7 +54,7 @@ There are $3$ lines of input, and each line contains a single integer.
 125
 ```
 
-**Sample Output**
+**Output**
 
 ```
 42
@@ -52,9 +62,12 @@ There are $3$ lines of input, and each line contains a single integer.
 125
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `nextInt()` reads the next integer, whatever line it is on.
+
+### ✍️ The code you write
 
 ```java
 int b = scan.nextInt();
@@ -64,10 +77,17 @@ System.out.println(b);
 System.out.println(c);
 ```
 
-- `nextInt()` reads the next integer, whatever line it is on.
+### 🔍 How it works
+
 - Read all three first, then print each one with `println` (one per line).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/java_stdin_and_stdout_i/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/java_stdin_and_stdout_i/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Welcome to Java!](../welcome_to_java/README.md) · [☕ All Java exercises](../../../README.md) · [Java If-Else](../java_if_else/README.md) ➡️

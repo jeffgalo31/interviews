@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java If-Else
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-if-else/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-if-else/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 In this challenge, we test your knowledge of using *if-else* conditional statements to automate decision-making processes. An if-else statement has the following logical flow:
 
@@ -25,7 +30,8 @@ End IF
 
 <sub>Source: [Wikipedia](https://en.wikipedia.org/wiki/Conditional_(computer_programming))</sub>
 
-**Task**
+### Task
+
 Given an integer, $n$, perform the following conditional actions:
 
 * If $n$ is odd, print `Weird`
@@ -35,37 +41,48 @@ Given an integer, $n$, perform the following conditional actions:
 
 Complete the stub code provided in your editor to print whether or not $n$ is weird.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 A single line containing a positive integer, $n$.
 
-**Constraints**
+### Constraints
 
 - $ 1 \le n \le 100$
 
-**Output Format**
+### Output format
 
 Print `Weird` if the number is weird; otherwise, print `Not Weird`.
 
-**Sample Input 0**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
     3
 
-**Sample Output 0**
+**Output**
 
     Weird
 
-**Sample Input 1**
+### Example 2
+
+**Input**
 
     24
 
-**Sample Output 1**
+**Output**
 
     Not Weird
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `N % 2 != 0` means N is odd (the remainder of dividing by 2 is not 0).
+
+### ✍️ The code you write
 
 ```java
 // Odd, or even between 6 and 20 -> Weird. Every other even number -> Not Weird.
@@ -76,10 +93,17 @@ if (N % 2 != 0 || (N >= 6 && N <= 20)) {
 }
 ```
 
-- `N % 2 != 0` means N is odd (the remainder of dividing by 2 is not 0).
+### 🔍 How it works
+
 - The four rules collapse into one test: **Weird** if odd *or* between 6 and 20; otherwise **Not Weird**.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/java_if_else/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/java_if_else/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [ Java Stdin and Stdout I](../java_stdin_and_stdout_i/README.md) · [☕ All Java exercises](../../../README.md) · [Java Stdin and Stdout II](../java_stdin_and_stdout_ii/README.md) ➡️

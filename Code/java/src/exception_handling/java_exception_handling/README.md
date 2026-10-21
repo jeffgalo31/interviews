@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Exception Handling
 
-**Difficulty:** Easy · **Section:** Exception Handling · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-exception-handling/problem)
+🟢 **Easy** · 📁 **Exception Handling** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-exception-handling/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are required to compute the power of a number by implementing a calculator. Create a class *MyCalculator* which consists of a single method `long power(int, int)`. This method takes two integers, $n$ and $p$, as parameters and finds $n^p$. If either $n$ or $p$ is negative, then the method must throw an exception which says "$\texttt{n or p should not be negative}$". Also, if both $n$ and $p$ are zero, then the method must throw an exception which says "$\texttt{n and p should not be zero.}$"
 
@@ -10,21 +15,25 @@ For example, *-4* and *-5* would result in $\texttt{java.lang.Exception: n or p 
 
 Complete the function `power` in class *MyCalculator* and return the appropriate result after the power operation or an appropriate exception as detailed above.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 Each line of the input contains two integers, $n$ and $p$. The locked stub code in the editor reads the input and sends the values to the method as parameters.
 
-**Constraints**
+### Constraints
 
 - $-10 \le n \le 10$
 - $-10 \le p \le 10$
 
-**Output Format**
+### Output format
 
 Each line of the output contains the result $n^p$, if both $n$ and $p$ are positive. If either $n$ or $p$ is negative, the output contains "n and p should be non-negative". If
 both $n$ and $p$ are zero, the output contains "n and p should not be zero.". This is printed by the locked stub code in the editor.
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 3 5
@@ -34,7 +43,7 @@ both $n$ and $p$ are zero, the output contains "n and p should not be zero.". Th
 -1 3
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 243
@@ -44,7 +53,7 @@ java.lang.Exception: n or p should not be negative.
 java.lang.Exception: n or p should not be negative.
 ```
 
-**Explanation**
+**Why**
 
 - In the first two cases, both n and p are postive. So, the power function returns the answer correctly.
 - In the third case, both n and p are zero. So, the exception, "n and p should not be zero.", is printed.
@@ -52,9 +61,12 @@ java.lang.Exception: n or p should not be negative.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `throw new Exception("message")` stops the method; the locked `catch` prints `java.lang.Exception: message`.
+
+### ✍️ The code you write
 
 ```java
 class MyCalculator {
@@ -74,11 +86,18 @@ class MyCalculator {
 }
 ```
 
-- `throw new Exception("message")` stops the method; the locked `catch` prints `java.lang.Exception: message`.
+### 🔍 How it works
+
 - Check negatives first, then the 0^0 case, exactly as the expected output orders them.
 - `throws Exception` in the method signature is required for a checked exception.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/exception_handling/java_exception_handling/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/exception_handling/java_exception_handling/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Exception Handling (Try-catch)](../java_exception_handling_try_catch/README.md) · [☕ All Java exercises](../../../README.md) · [Java Varargs - Simple Addition](../../advanced/java_varargs_simple_addition/README.md) ➡️

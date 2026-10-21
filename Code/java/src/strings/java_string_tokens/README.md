@@ -1,33 +1,42 @@
+<!-- study-layout -->
 # Java String Tokens
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-string-tokens/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-string-tokens/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Given a string, $s$, matching the regular expression `[A-Za-z !,?._'@]+`, split the string into *tokens*. We define a token to be one or more consecutive English alphabetic letters. Then, print the number of tokens, followed by each token on a new line.
 
 **Note:** You may find the [String.split](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-) method helpful in completing this challenge.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 A single string, $s$.
 
-**Constraints**
+### Constraints
 
 - $1 \le \text{ length of } s \le 4 \cdot 10^5$
 - $s$ is composed of *any* of the following: English alphabetic letters, blank spaces, exclamation points (`!`), commas (`,`), question marks (`?`), periods (`.`), underscores (`_`), apostrophes (`'`), and at symbols (`@`).
 
-**Output Format**
+### Output format
 
 On the first line, print an integer, $n$, denoting the number of tokens in string $s$ (they *do not* need to be unique). Next, print each of the $n$ tokens on a new line in the same order as they appear in input string $s$.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 He is a very very good boy, isn't he?
 ```
 
-**Sample Output**
+**Output**
 
 ```
 10
@@ -43,15 +52,18 @@ t
 he
 ```
 
-**Explanation**
+**Why**
 
 We consider a token to be a contiguous segment of alphabetic characters. There are a total of 10 such tokens in string s, and each token is printed in the same order in which it appears in string s.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** A token is a run of letters, so split on runs of anything else: `[^A-Za-z]+`.
+
+### ✍️ The code you write
 
 ```java
 public class Solution {
@@ -77,11 +89,18 @@ public class Solution {
 }
 ```
 
-- A token is a run of letters, so split on runs of anything else: `[^A-Za-z]+`.
+### 🔍 How it works
+
 - `split` gives an empty first element when the string *starts* with a separator, so strip those first.
 - Edge case: a string with no letters at all prints `0`.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_string_tokens/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_string_tokens/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Anagrams](../java_anagrams/README.md) · [☕ All Java exercises](../../../README.md) · [Pattern Syntax Checker](../pattern_syntax_checker/README.md) ➡️

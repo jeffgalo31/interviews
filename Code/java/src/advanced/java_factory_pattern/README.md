@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Factory Pattern
 
-**Difficulty:** Easy · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-factory/problem)
+🟢 **Easy** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-factory/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 According to Wikipedia, a factory is simply an object that returns another object from some other method call, which is assumed to be "new".
 
@@ -12,29 +17,38 @@ The main function in the *Main* class creates an instance of the *FoodFactory* c
 
 You are given the partially completed code in the editor. Please complete the *FoodFactory* class.
 
-**Sample Input 1**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 	cake
 
-**Sample Output 1**
+**Output**
 
 	The factory returned class Cake
 	Someone ordered a Dessert!
 
-**Sample Input 2**
+### Example 2
+
+**Input**
 
 	pizza
 
-**Sample Output 2**
+**Output**
 
 	The factory returned class Pizza
 	Someone ordered Fast Food!
 
 > HackerRank's text says "Someone ordered Fast Food!", but its locked `Pizza` class returns "Someone ordered a Fast Food!", which is what actually prints.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** A factory hides `new`: callers ask for `"pizza"` or `"cake"` and get back a `Food`.
+
+### ✍️ The code you write
 
 ```java
 if (order.equalsIgnoreCase("pizza")) {
@@ -45,10 +59,17 @@ if (order.equalsIgnoreCase("pizza")) {
 return null;
 ```
 
-- A factory hides `new`: callers ask for `"pizza"` or `"cake"` and get back a `Food`.
+### 🔍 How it works
+
 - Return the matching implementation; the caller only knows the `Food` interface.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/java_factory_pattern/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/java_factory_pattern/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Prime Checker](../prime_checker/README.md) · [☕ All Java exercises](../../../README.md) · [Java Singleton Pattern](../java_singleton_pattern/README.md) ➡️

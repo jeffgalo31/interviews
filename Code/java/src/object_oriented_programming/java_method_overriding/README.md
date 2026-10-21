@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Method Overriding
 
-**Difficulty:** Easy · **Section:** Object Oriented Programming · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-method-overriding/problem)
+🟢 **Easy** · 📁 **Object Oriented Programming** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-method-overriding/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 When a subclass inherits from a superclass, it also inherits its methods; however, it can also *override* the superclass methods (as well as declare and implement new ones). Consider the following *Sports* class:
 
@@ -32,10 +37,13 @@ class Soccer extends Sports{
 
 ----
 
-**Task**
+### Task
+
 Complete the code in your editor by writing an overridden *getNumberOfTeamMembers* method that prints the same statement as the superclass' *getNumberOfTeamMembers* method, except that it replaces $n$ with $11$ (the number of players on a Soccer team).
 
-**Output Format**
+## 📥 Input & output
+
+### Output format
 
 When executed, your completed code should print the following:
 
@@ -44,9 +52,12 @@ When executed, your completed code should print the following:
     Soccer Class
     Each team has 11 players in Soccer Class
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Overriding: same name, same parameters, same return type as the superclass method.
+
+### ✍️ The code you write
 
 ```java
 @Override
@@ -55,10 +66,17 @@ void getNumberOfTeamMembers(){
 }
 ```
 
-- Overriding: same name, same parameters, same return type as the superclass method.
+### 🔍 How it works
+
 - `@Override` makes the compiler check that it really overrides something.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/object_oriented_programming/java_method_overriding/Solution.java` from the `java` folder.
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/object_oriented_programming/java_method_overriding/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Interface](../java_interface/README.md) · [☕ All Java exercises](../../../README.md) · [Java Method Overriding 2 (Super Keyword)](../java_method_overriding_2_super_keyword/README.md) ➡️

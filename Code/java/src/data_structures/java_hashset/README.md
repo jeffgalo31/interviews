@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Hashset
 
-**Difficulty:** Easy · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-hashset/problem)
+🟢 **Easy** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-hashset/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 In computer science, a set is an abstract data type that can store certain values, without any particular order, and no repeated values(Wikipedia). $\{1,2,3\}$ is an example of a set, but $\{1,2,2\}$ is not a set. Today you will learn how to use sets in java by solving this problem.<br>
 
@@ -10,20 +15,24 @@ You are given $n$ pairs of strings. Two pairs $(a,b)$ and $(c,d)$ are identical 
 
 Complete the code in the editor to solve this problem.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 In the first line, there will be an integer $T$ denoting number of pairs. Each of the next $T$ lines will contain two strings seperated by a single space.
 
-**Constraints:**
+### Constraints
 
 * $1 \le T \le 100000$
 * Length of each string is atmost $5$ and will consist lower case letters only.
 
-**Output Format**
+### Output format
 
 Print $T$ lines. In the $i_{th}$ line, print number of unique pairs you have after taking $i^{th}$ pair as input.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
@@ -34,7 +43,7 @@ mary anna
 mary anna
 ```
 
-**Sample Output**
+**Output**
 
 ```
 1
@@ -44,7 +53,7 @@ mary anna
 3
 ```
 
-**Explanation**
+**Why**
 
 - After taking the first input, you have only one pair: (john,tom)
 - After taking the second input, you have two pairs: (john, tom) and (john, mary)
@@ -52,9 +61,12 @@ mary anna
 - After taking the fourth input, you have three unique pairs: (john,tom), (john, mary) and (mary, anna)
 - After taking the fifth input, you still have three unique pairs.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** A `HashSet` ignores duplicates, so its size is the number of unique pairs so far.
+
+### ✍️ The code you write
 
 ```java
 Set<String> pairs = new HashSet<>();
@@ -64,10 +76,17 @@ for (int i = 0; i < t; i++) {
 }
 ```
 
-- A `HashSet` ignores duplicates, so its size is the number of unique pairs so far.
+### 🔍 How it works
+
 - Join each pair into one string with a separator; order matters, so (a, b) and (b, a) stay different.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_hashset/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_hashset/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Stack](../java_stack/README.md) · [☕ All Java exercises](../../../README.md) · [Java Generics](../java_generics/README.md) ➡️

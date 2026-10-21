@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Annotations
 
-**Difficulty:** Medium · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-annotations/problem)
+🟡 **Medium** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-annotations/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Java annotation can be used to define the metadata of a Java class or class element. We can use Java annotation at the compile time to instruct the compiler about the build process. Annotation is also used at runtime to get insight into the properties of class elements.
 
@@ -101,13 +106,15 @@ Your task is to complete the $\text{FamilyBudget}$ annotation and the $\text{Fam
 
 **Note**: You must complete the $5$ incomplete lines in the editor. You are not allowed to change, delete or modify any other lines. To restore the original code, click on the top-left button on the editor and create a new buffer.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line of input contains an integer $N$ representing the total number of test cases. Each test case contains a string and an integer separated by a space on a single line in the following format:
 
     UserRole MoneySpend
 
-**Constraints**
+### Constraints
 
 $2 \le N \le 10$
 $0 \le MoneySpend \le 200$
@@ -115,11 +122,13 @@ $ |UserRole|= 6$
 
 Name contains only lowercase English letters.
 
-**Output Format**
+### Output format
 
 Based on the user role and budget outputs, output the contents of the certain method. If the amount of money spent is over the budget limit, then output ``Budget Limit Over``.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 3
@@ -128,7 +137,7 @@ JUNIOR 45
 SENIOR 40
 ```
 
-**Sample Output**
+**Output**
 
 ```
 Senior Member
@@ -142,9 +151,12 @@ Spend: 40
 Budget Left: 60
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** An annotation member is declared like a method: `int budgetLimit() default 0;`.
+
+### ✍️ The code you write
 
 ```java
 int budgetLimit() default 0;
@@ -158,12 +170,19 @@ if (userRole.equals(role)) {
 	if(spend <= budgetLimit){
 ```
 
-- An annotation member is declared like a method: `int budgetLimit() default 0;`.
+### 🔍 How it works
+
 - Tag each method with its role and limit: SENIOR 100, JUNIOR 50 (from the sample: 75 spent leaves 25, 45 spent leaves 5).
 - `@Retention(RUNTIME)` keeps the annotation at run time so reflection (`getAnnotation`) can read it.
 - Read the limit with `family.budgetLimit()`; the spend is allowed when `spend <= budgetLimit`.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/java_annotations/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/java_annotations/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Visitor Pattern](../java_visitor_pattern/README.md) · [☕ All Java exercises](../../../README.md) · [Covariant Return Types](../covariant_return_types/README.md) ➡️

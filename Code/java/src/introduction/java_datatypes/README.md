@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Datatypes
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-datatypes/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-datatypes/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Java has 8 primitive data types; *char, boolean, byte, short, int, long, float, and double*. For this exercise, we'll work with the primitives used to hold integer values (*byte, short, int,* and *long*):
 
@@ -17,12 +22,14 @@ To get you started, a portion of the solution is provided for you in the editor.
 
 **Reference:** https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains an integer, $T$, denoting the number of test cases.
 Each test case, $T$, is comprised of a single line with an integer, $n$, which can be arbitrarily large or small.
 
-**Output Format**
+### Output format
 
 For each input variable $n$ and appropriate primitive $dataType$, you must determine if the given primitives are capable of storing it. If yes, then print:
 
@@ -35,7 +42,9 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 
 	n can't be fitted anywhere.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
@@ -46,7 +55,7 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 -100000000000000
 ```
 
-**Sample Output**
+**Output**
 
 ```
 -150 can be fitted in:
@@ -64,7 +73,7 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 * long
 ```
 
-**Explanation**
+**Why**
 
 −150 can be stored in a short, an int, or a long.
 
@@ -72,9 +81,12 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Ranges: byte −128..127, short −32768..32767, int about ±2.1 billion, long about ±9.2 × 10^18.
+
+### ✍️ The code you write
 
 ```java
 if (x >= Short.MIN_VALUE && x <= Short.MAX_VALUE) System.out.println("* short");
@@ -82,11 +94,18 @@ if (x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE) System.out.println("* int"
 System.out.println("* long");   // nextLong() succeeded, so it always fits in a long
 ```
 
-- Ranges: byte −128..127, short −32768..32767, int about ±2.1 billion, long about ±9.2 × 10^18.
+### 🔍 How it works
+
 - `Short.MIN_VALUE`, `Integer.MAX_VALUE`, ... avoid typing the limits by hand.
 - If `nextLong()` throws, the number is too big even for a long, and the locked `catch` prints "can't be fitted anywhere".
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/java_datatypes/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/java_datatypes/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Loops II](../java_loops_ii/README.md) · [☕ All Java exercises](../../../README.md) · [Java End-of-file](../java_end_of_file/README.md) ➡️

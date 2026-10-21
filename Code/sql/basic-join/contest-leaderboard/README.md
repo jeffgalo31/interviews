@@ -1,14 +1,21 @@
+<!-- study-layout -->
 # Contest Leaderboard
 
-**Difficulty:** Medium · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/contest-leaderboard/problem)
+🟡 **Medium** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/contest-leaderboard/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, too!
 
 The total score of a hacker is the sum of their maximum scores for all of the challenges. Write a query to print the _hacker\_id_, _name_, and total score of the hackers ordered by the descending score. If more than one hacker achieved the same total score, then sort the result by ascending _hacker\_id_. Exclude all hackers with a total score of $0$ from your result.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables contain contest data:
 
@@ -28,7 +35,9 @@ The following tables contain contest data:
 | challenge_id | Integer |
 | score | Integer |
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 Hackers Table:
 
@@ -71,7 +80,7 @@ Submissions Table:
 | 26363 | 26071 | 19797 | 29 |
 | 10063 | 4071 | 49593 | 96 |
 
-**Sample Output**
+**Output**
 
 ```
 4071 Rose 191
@@ -83,7 +92,7 @@ Submissions Table:
 49438 Patrick 43
 ```
 
-**Explanation**
+**Why**
 
 Hacker 4071 submitted solutions for challenges 19797 and 49593, so the total score = 95 + max(43, 96) = 191.
 
@@ -95,7 +104,12 @@ The total scores for hackers 4806, 26071, 80305, and 49438 can be similarly calc
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Step 1 (subquery): best score per hacker per challenge, so retries don't count twice.
+
+### ✍️ The query
 
 ```sql
 SELECT h.hacker_id, h.name, SUM(m.max_score) AS total_score
@@ -110,10 +124,20 @@ HAVING total_score > 0
 ORDER BY total_score DESC, h.hacker_id;
 ```
 
-- Step 1 (subquery): best score per hacker per challenge, so retries don't count twice.
+### 🔍 How it works
+
 - Step 2: sum those best scores per hacker.
 - `HAVING total_score > 0` removes hackers whose total is 0.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Challenges](../challenges/README.md) · [🗄️ All SQL exercises](../../README.md) · [SQL Project Planning](../../advanced-join/sql-project-planning/README.md) ➡️

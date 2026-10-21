@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java MD5
 
-**Difficulty:** Medium · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-md5/problem)
+🟡 **Medium** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-md5/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 *MD5* (*Message-Digest algorithm 5*) is a widely-used cryptographic hash function with a $128$-bit hash value. Here are some common uses for *MD5*:
 
@@ -13,38 +18,49 @@
 
 Given an alphanumeric string, $s$, denoting a password, compute and print its *MD5* encryption value.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 A single alphanumeric string denoting $s$.
 
-**Constraints**
+### Constraints
 
 * $ 6 \le |s| \le 20 $
 - String $s$ consists of English alphabetic letters (i.e., $[a-zA-Z]$ and/or decimal digits (i.e., $0$ through $9$) only.
 
-**Output Format**
+### Output format
 
 Print the *MD5* encryption value of $s$ on a new line.
 
-**Sample Input 0**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 	HelloWorld
 
-**Sample Output 0**
+**Output**
 
 	68e109f0f40ca72a15e05cc22786f8e6
 
-**Sample Input 1**
+### Example 2
+
+**Input**
 
     Javarmi123
 
-**Sample Output 1**
+**Output**
 
 	2da2d1e0ce7b4951a858ed2d547ef485
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `MessageDigest.getInstance("MD5")` gives the hash function; `digest(bytes)` returns 16 bytes.
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -60,10 +76,17 @@ for (byte b : digest) {
 System.out.println(hex);
 ```
 
-- `MessageDigest.getInstance("MD5")` gives the hash function; `digest(bytes)` returns 16 bytes.
+### 🔍 How it works
+
 - Print each byte as two hex digits with `%02x` (the `0` keeps leading zeros like `0f`).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/java_md5/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/java_md5/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Lambda Expressions](../java_lambda_expressions/README.md) · [☕ All Java exercises](../../../README.md) · [Java SHA-256](../java_sha_256/README.md) ➡️

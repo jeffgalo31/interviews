@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Subarray
 
-**Difficulty:** Easy · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-negative-subarray/problem)
+🟢 **Easy** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-negative-subarray/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 We define the following:
 
@@ -13,34 +18,38 @@ We define the following:
 
 Given an array of $n$ integers, find and print its number of *negative subarrays* on a new line.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains a single integer, $n$, denoting the length of array $A = [a_0, a_1, \ldots, a_{n - 1}]$.
 The second line contains $n$ space-separated integers describing each respective element, $a_i$, in array $A$.
 
-**Constraints**
+### Constraints
 
 - $1 \le n \le 100$
 - $-10^4 \le a_i \le 10^4$
 
-**Output Format**
+### Output format
 
 Print the number of subarrays of $A$ having negative sums.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
 1 -2 4 -5 1
 ```
 
-**Sample Output**
+**Output**
 
 ```
 9
 ```
 
-**Explanation**
+**Why**
 
 There are nine negative subarrays of A = [1, −2, 4, −5, 1]:
 
@@ -58,9 +67,12 @@ Thus, we print 9 on a new line.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Every subarray is a pair (start, end) with start ≤ end.
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -80,11 +92,18 @@ for (int start = 0; start < n; start++) {
 System.out.println(negatives);
 ```
 
-- Every subarray is a pair (start, end) with start ≤ end.
+### 🔍 How it works
+
 - For each start, extend `end` one step at a time and keep a running sum (no need to re-add from scratch).
 - n ≤ 100, so checking all ~5,000 subarrays is instant.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_subarray/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_subarray/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java 2D Array](../java_2d_array/README.md) · [☕ All Java exercises](../../../README.md) · [Java Arraylist](../java_arraylist/README.md) ➡️

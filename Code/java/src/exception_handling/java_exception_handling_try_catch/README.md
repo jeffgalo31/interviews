@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Exception Handling (Try-catch)
 
-**Difficulty:** Easy · **Section:** Exception Handling · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem)
+🟢 **Easy** · 📁 **Exception Handling** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Exception handling is the process of responding to the occurrence, during computation, of exceptions – anomalous or exceptional conditions requiring special processing – often changing the normal flow of program execution. (Wikipedia)
 ***
@@ -13,45 +18,58 @@ This problem will test your knowledge on try-catch block.
 
 You will be given two integers $x$ and $y$ as input, you have to compute $x/y$. If $x$ and $y$ are not $32$ bit signed integers or if $y$ is zero, exception will occur and you have to report it. Read sample Input/Output to know what to report in case of exceptions.
 
-**Sample Input 0:**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 	10
     3
 
-**Sample Output 0:**
+**Output**
 
 	3
 
-**Sample Input 1:**
+### Example 2
+
+**Input**
 
 	10
     Hello
 
-**Sample Output 1:**
+**Output**
 
 	java.util.InputMismatchException
 
-**Sample Input 2:**
+### Example 3
+
+**Input**
 
 	10
     0
 
-**Sample Output 2:**
+**Output**
 
 	java.lang.ArithmeticException: / by zero
 
-**Sample Input 3:**
+### Example 4
+
+**Input**
 
 	23.323
     0
 
-**Sample Output 3:**
+**Output**
 
 	java.util.InputMismatchException
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `nextInt()` throws `InputMismatchException` when the next token isn't a 32-bit integer ("Hello", "23.323").
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -69,11 +87,18 @@ try {
 scan.close();
 ```
 
-- `nextInt()` throws `InputMismatchException` when the next token isn't a 32-bit integer ("Hello", "23.323").
+### 🔍 How it works
+
 - Integer division by zero throws `ArithmeticException: / by zero`.
 - Printing an exception (`println(e)`) shows `class name: message`; for the mismatch case HackerRank expects only the class name, so print `getClass().getName()`.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/exception_handling/java_exception_handling_try_catch/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/exception_handling/java_exception_handling_try_catch/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Iterator](../../object_oriented_programming/java_iterator/README.md) · [☕ All Java exercises](../../../README.md) · [Java Exception Handling](../java_exception_handling/README.md) ➡️

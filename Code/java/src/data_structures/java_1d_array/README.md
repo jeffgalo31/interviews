@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java 1D Array
 
-**Difficulty:** Easy · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-1d-array-introduction/problem)
+🟢 **Easy** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-1d-array-introduction/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 An array is a simple data structure used to store a collection of data in a contiguous block of memory. Each element in the collection is accessed using an *index*, and the elements are easy to find because they're stored sequentially in memory.
 
@@ -20,7 +25,7 @@ Similarly, we can print the contents of the last cell with the following code:
 
 The code above prints the value stored at index $3$ of $myArray$, which is $12$ (the value we previously stored there). It's important to note that while Java initializes each cell of an array of integers with a $0$, not all languages do this.
 
-**Task**
+### Task
 
 The code in your editor does the following:
 
@@ -35,16 +40,20 @@ Write the following code in the unlocked portion of your editor:
 
 Good luck!
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains a single integer, $n$, denoting the size of the array.
 Each line $i$ of the $n$ subsequent lines contains a single integer denoting the value of element $a_{i}$.
 
-**Output Format**
+### Output format
 
 You are not responsible for printing any output to stdout. Locked code in the editor loops through array $a$ and prints each sequential element on a new line.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
@@ -55,7 +64,7 @@ You are not responsible for printing any output to stdout. Locked code in the ed
 50
 ```
 
-**Sample Output**
+**Output**
 
 ```
 10
@@ -65,15 +74,18 @@ You are not responsible for printing any output to stdout. Locked code in the ed
 50
 ```
 
-**Explanation**
+**Why**
 
 When we save each integer to its corresponding index in a, we get a = [10, 20, 30, 40, 50]. The locked code prints each array element on a new line from left to right.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `new int[n]` creates an array with room for n integers (all start at 0).
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -91,11 +103,18 @@ for (int i = 0; i < a.length; i++) {  // print each element on its own line
 }
 ```
 
-- `new int[n]` creates an array with room for n integers (all start at 0).
+### 🔍 How it works
+
 - Store the i-th value at index `i`, then print the array in order.
 - HackerRank's newer template for this challenge reads the numbers from one line; this version uses `Scanner`, which reads them whether they are on one line or several.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_1d_array/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_1d_array/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java BigInteger](../../bignumber/java_biginteger/README.md) · [☕ All Java exercises](../../../README.md) · [Java 2D Array](../java_2d_array/README.md) ➡️

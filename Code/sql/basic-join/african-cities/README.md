@@ -1,14 +1,21 @@
+<!-- study-layout -->
 # African Cities
 
-**Difficulty:** Easy · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/african-cities/problem)
+🟢 **Easy** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/african-cities/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Given the **CITY** and **COUNTRY** tables, query the names of all cities where the *CONTINENT* is *'Africa'*.
 
 **Note:** *CITY.CountryCode* and *COUNTRY.Code* are matching key columns.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The **CITY** and **COUNTRY** tables are described as follows:
 
@@ -42,7 +49,12 @@ The **CITY** and **COUNTRY** tables are described as follows:
 | CAPITAL | VARCHAR2(4) |
 | CODE2 | VARCHAR2(2) |
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Join on the matching key columns, filter on the continent, select the city name.
+
+### ✍️ The query
 
 ```sql
 SELECT CITY.NAME
@@ -51,8 +63,15 @@ JOIN COUNTRY ON CITY.COUNTRYCODE = COUNTRY.CODE
 WHERE COUNTRY.CONTINENT = 'Africa';
 ```
 
-- Join on the matching key columns, filter on the continent, select the city name.
+## 📂 Files
 
-**Sample data in solution.sql:** made up for local practice (HackerRank shows no sample data for this challenge, so your results will differ from HackerRank's hidden data).
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+🧪 **Sample data in solution.sql:** made up for local practice (HackerRank shows no sample data for this challenge, so your results will differ from HackerRank's hidden data).
+
+---
+
+⬅️ [Population Census ](../population-census/README.md) · [🗄️ All SQL exercises](../../README.md) · [Average Population of Each Continent](../average-population-of-each-continent/README.md) ➡️

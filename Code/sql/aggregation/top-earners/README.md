@@ -1,12 +1,19 @@
+<!-- study-layout -->
 # Top Earners
 
-**Difficulty:** Easy · **Section:** Aggregation · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/earnings-of-employees/problem)
+🟢 **Easy** · 📁 **Aggregation** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/earnings-of-employees/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
 
+## 📝 Problem
+
 We define an employee's *total earnings* to be their monthly $salary \times  months$ worked, and the *maximum total earnings* to be the maximum total earnings for any employee in the **Employee** table. Write a query to find the _maximum total earnings_ for all employees as well as the total number of employees who have maximum total earnings. Then print these values as $2$ space-separated integers.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The **Employee** table containing employee data for a company is described as follows:
 
@@ -19,7 +26,9 @@ The **Employee** table containing employee data for a company is described as fo
 
 where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ is the total number of months they've been working for the company, and _salary_ is the their monthly salary.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 | employee_id | name | months | salary |
 |---|---|---|---|
@@ -34,13 +43,13 @@ where _employee\_id_ is an employee's ID number, _name_ is their name, _months_ 
 | 98607 | Todd | 5 | 3396 |
 | 99989 | Joe | 9 | 3573 |
 
-**Sample Output**
+**Output**
 
 ```
 69952 1
 ```
 
-**Explanation**
+**Why**
 
 The table and earnings data is depicted in the following diagram:
 
@@ -61,7 +70,12 @@ The maximum earnings value is 69952. The only employee with earnings = 69952 is 
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Group employees by their total earnings and count each group.
+
+### ✍️ The query
 
 ```sql
 SELECT salary * months AS earnings, COUNT(*)
@@ -71,9 +85,19 @@ ORDER BY earnings DESC
 LIMIT 1;
 ```
 
-- Group employees by their total earnings and count each group.
+### 🔍 How it works
+
 - Highest earnings first, keep only that row: the max and how many employees have it.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [The Blunder](../the-blunder/README.md) · [🗄️ All SQL exercises](../../README.md) · [Weather Observation Station 2](../weather-observation-station-2/README.md) ➡️

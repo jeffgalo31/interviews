@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Loops II
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-loops/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-loops/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 We use the integers $a$, $b$, and $n$ to create the following series:
 
@@ -10,22 +15,26 @@ $$(a+2^{0} \cdot b), (a+2^{0} \cdot b + 2^{1} \cdot b), \ldots , (a + 2^{0} \cdo
 
 You are given $q$ queries in the form of $a$, $b$, and $n$. For each query, print the series corresponding to the given $a$, $b$, and $n$ values as a single line of $n$ space-separated integers.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains an integer, $q$, denoting the number of queries.
 Each line $i$ of the $q$ subsequent lines contains three space-separated integers describing the respective $a_i$, $b_i$, and $n_i$ values for that query.
 
-**Constraints**
+### Constraints
 
 * $0 \le q \le 500$
 * $0 \le a, b \le 50$
 * $1 \le n \le 15$
 
-**Output Format**
+### Output format
 
 For each query, print the corresponding series on a new line. Each series must be printed in order as a single line of $n$ space-separated integers.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 2
@@ -33,14 +42,14 @@ For each query, print the corresponding series on a new line. Each series must b
 5 3 5
 ```
 
-**Sample Output**
+**Output**
 
 ```
 2 6 14 30 62 126 254 510 1022 2046
 8 14 26 50 98
 ```
 
-**Explanation**
+**Why**
 
 We have two queries:
 
@@ -62,9 +71,12 @@ We have two queries:
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Each term is the previous term plus `2^j * b`, so keep a running `value` instead of recomputing the sum.
+
+### ✍️ The code you write
 
 ```java
 StringBuilder line = new StringBuilder();
@@ -77,11 +89,18 @@ for (int j = 0; j < n; j++) {
 System.out.println(line);
 ```
 
-- Each term is the previous term plus `2^j * b`, so keep a running `value` instead of recomputing the sum.
+### 🔍 How it works
+
 - `1 << j` is 2 to the power j (shifting the bit 1 left j times).
 - `StringBuilder` collects the numbers so the line is printed once, with spaces only between them.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/java_loops_ii/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/java_loops_ii/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Loops I](../java_loops_i/README.md) · [☕ All Java exercises](../../../README.md) · [Java Datatypes](../java_datatypes/README.md) ➡️

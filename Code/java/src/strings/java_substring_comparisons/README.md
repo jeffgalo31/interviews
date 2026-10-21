@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Substring Comparisons
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-string-compare/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-string-compare/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 We define the following terms:
 
@@ -14,7 +19,7 @@ We define the following terms:
 
 Given a string, $s$, and an integer, $k$, complete the function so that it finds the lexicographically *smallest* and *largest* substrings of length $k$.
 
-**Function Description**
+### Function Description
 
 Complete the *getSmallestAndLargest* function in the editor below.
 
@@ -23,35 +28,39 @@ Complete the *getSmallestAndLargest* function in the editor below.
 - *string s:* a string
 - *int k:* the length of the substrings to find
 
-**Returns**
+### Returns
 
 - *string:* the string '<smallest> + "\n" + <largest>' where <smallest> and <largest> are the two substrings
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains a string denoting $s$.
 The second line contains an integer denoting $k$.
 
-**Constraints**
+### Constraints
 
 - $1 \le |s| \le 1000$
 - $s$ consists of English alphabetic letters only (i.e., `[a-zA-Z]`).
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 welcometojava
 3
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 ava
 wel
 ```
 
-**Explanation**
+**Why**
 
 String s = "welcometojava" has the following lexicographically-ordered substrings of length k = 3:
 
@@ -63,9 +72,12 @@ The stub code in the editor then prints `ava` as our first line of output and `w
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Slide a window of length k over the string: `s.substring(i, i + k)` for every start index.
+
+### ✍️ The code you write
 
 ```java
 public static String getSmallestAndLargest(String s, int k) {
@@ -83,11 +95,18 @@ public static String getSmallestAndLargest(String s, int k) {
 }
 ```
 
-- Slide a window of length k over the string: `s.substring(i, i + k)` for every start index.
+### 🔍 How it works
+
 - Start both answers with the first window, then keep whichever compares smaller / larger (`compareTo`).
 - Uppercase letters sort before lowercase (`Zoo < ball`), which `compareTo` already does.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_substring_comparisons/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_substring_comparisons/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Substring](../java_substring/README.md) · [☕ All Java exercises](../../../README.md) · [Java String Reverse](../java_string_reverse/README.md) ➡️

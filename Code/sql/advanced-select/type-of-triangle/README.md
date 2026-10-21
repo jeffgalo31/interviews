@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Type of Triangle
 
-**Difficulty:** Easy · **Section:** Advanced Select · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/what-type-of-triangle/problem)
+🟢 **Easy** · 📁 **Advanced Select** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/what-type-of-triangle/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Write a query identifying the *type* of each record in the **TRIANGLES** table using its three side lengths. Output one of the following statements for each record in the table:
 
@@ -11,7 +16,9 @@ Write a query identifying the *type* of each record in the **TRIANGLES** table u
 - **Scalene**: It's a triangle with $3$ sides of differing lengths.
 - **Not A Triangle**: The given values of *A*, *B*, and *C* don't form a triangle.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The **TRIANGLES** table is described as follows:
 
@@ -23,7 +30,9 @@ The **TRIANGLES** table is described as follows:
 
 Each row in the table denotes the lengths of each of a triangle's three sides.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 | A | B | C |
 |---|---|---|
@@ -32,7 +41,7 @@ Each row in the table denotes the lengths of each of a triangle's three sides.
 | 20 | 21 | 22 |
 | 13 | 14 | 30 |
 
-**Sample Output**
+**Output**
 
 ```
 Isosceles
@@ -41,7 +50,7 @@ Scalene
 Not A Triangle
 ```
 
-**Explanation**
+**Why**
 
 Values in the tuple (20, 20, 23) form an Isosceles triangle, because A ≡ B.
 
@@ -53,7 +62,12 @@ Values in the tuple (13, 14, 30) cannot form a triangle because the combined val
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** Check **Not A Triangle first**: `CASE` stops at the first true `WHEN`, and (13, 13, 30) would otherwise be labeled Isosceles.
+
+### ✍️ The query
 
 ```sql
 SELECT CASE
@@ -65,10 +79,20 @@ SELECT CASE
 FROM TRIANGLES;
 ```
 
-- Check **Not A Triangle first**: `CASE` stops at the first true `WHEN`, and (13, 13, 30) would otherwise be labeled Isosceles.
+### 🔍 How it works
+
 - A triangle needs every pair of sides to add up to more than the third side.
 - Then all three equal, then any two equal, otherwise all different.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Employee Salaries](../../basic-select/employee-salaries/README.md) · [🗄️ All SQL exercises](../../README.md) · [The PADS](../the-pads/README.md) ➡️

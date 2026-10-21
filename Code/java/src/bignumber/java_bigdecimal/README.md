@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java BigDecimal
 
-**Difficulty:** Medium · **Section:** BigNumber · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-bigdecimal/problem)
+🟡 **Medium** · 📁 **BigNumber** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-bigdecimal/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Java's BigDecimal class can handle arbitrary-precision signed decimal numbers. Let's test your knowledge of them!
 
@@ -10,21 +15,25 @@ Given an array, $s$, of $n$ real number strings, sort them in descending order &
 
 Complete the code in the unlocked section of the editor below. You must rearrange array $s$'s elements according to the instructions above.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line consists of a single integer, $n$, denoting the number of integer strings.
 Each line $i$ of the $n$ subsequent lines contains a real number denoting the value of $s_i$.
 
-**Constraints**
+### Constraints
 
 * $1 \le n \le 200$
 * Each $s_i$ has *at most* $300$ digits.
 
-**Output Format**
+### Output format
 
 Locked stub code in the editor will print the contents of array $s$ to stdout. You are only responsible for reordering the array's elements.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 9
@@ -39,7 +48,7 @@ Locked stub code in the editor will print the contents of array $s$ to stdout. Y
 000.000
 ```
 
-**Sample Output**
+**Output**
 
 ```
 90
@@ -53,9 +62,12 @@ Locked stub code in the editor will print the contents of array $s$ to stdout. Y
 -100
 ```
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Sort the **strings** but compare them as `BigDecimal` numbers, so each number is printed exactly as it was typed.
+
+### ✍️ The code you write
 
 ```java
 // Sort only the first n entries (the array has 2 extra empty slots).
@@ -63,12 +75,19 @@ The part you write:
 Arrays.sort(s, 0, n, (a, b) -> new BigDecimal(b).compareTo(new BigDecimal(a)));
 ```
 
-- Sort the **strings** but compare them as `BigDecimal` numbers, so each number is printed exactly as it was typed.
+### 🔍 How it works
+
 - `b.compareTo(a)` (reversed) gives descending order.
 - `Arrays.sort` on objects is stable: equal values like `0.12` and `.12` keep their input order.
 - Sort only indexes `0..n` because the array has 2 extra `null` slots.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/bignumber/java_bigdecimal/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/bignumber/java_bigdecimal/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Tag Content Extractor](../../strings/tag_content_extractor/README.md) · [☕ All Java exercises](../../../README.md) · [Java Primality Test](../java_primality_test/README.md) ➡️

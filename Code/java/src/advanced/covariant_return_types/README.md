@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Covariant Return Types
 
-**Difficulty:** Easy · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-covariance/problem)
+🟢 **Easy** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-covariance/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Java allows for [Covariant Return Types](https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html), which means you can vary your return type as long you are returning a subclass of your specified return type.
 
@@ -23,37 +28,45 @@ You will be given a partially completed code in the editor where the *main* meth
 
 **Note:**  *Do not* use access modifiers in your class declarations.
 
-**Resources**
+### Resources
+
 [Covariant Return Type](http://c2.com/cgi/wiki?CovariantReturnTypes)
 [Java Covariant Type](https://blogs.oracle.com/sundararajan/entry/covariant_return_types_in_java)
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The locked code reads a single string denoting the name of a subclass of *State* (i.e., `WestBengal`, `Karnataka`, or `AndhraPradesh`), then tests the methods associated with that subclass. You are not responsible for reading any input from stdin.
 
-**Output Format**
+### Output format
 
 Output is handled for you by the locked code, which creates the object corresponding to the input string's class name and then prints the name returned by that class' national flower's *whatsYourName* method. You are not responsible for printing anything to stdout.
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 AndhraPradesh
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 Lily
 ```
 
-**Explanation 0**
+**Why**
 
 An AndhraPradesh object's yourNationalFlower method returns an instance of the Lily class, and the Lily class' whatsYourName method returns `Lily`, which is printed by the hidden code checker.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** **Covariant return type:** an overriding method may return a *subclass* of the original return type (`Lily` instead of `Flower`).
+
+### ✍️ The code you write
 
 ```java
 //Complete the classes below
@@ -98,11 +111,18 @@ class AndhraPradesh extends Region {
 }
 ```
 
-- **Covariant return type:** an overriding method may return a *subclass* of the original return type (`Lily` instead of `Flower`).
+### 🔍 How it works
+
 - No access modifiers on the classes, as the problem asks.
 - HackerRank's diagram names the second flower *Lotus*, but its code and expected output use **Lily**, so Lily is implemented.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/covariant_return_types/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/covariant_return_types/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Annotations](../java_annotations/README.md) · [☕ All Java exercises](../../../README.md) · [Java Lambda Expressions](../java_lambda_expressions/README.md) ➡️

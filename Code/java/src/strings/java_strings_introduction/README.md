@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Strings Introduction
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-strings-introduction/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-strings-introduction/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 > "A string is traditionally a sequence of characters, either as a literal constant or as some kind of variable." &mdash; [Wikipedia: String (computer science)](https://en.wikipedia.org/wiki/String_(computer_science))
 
@@ -18,27 +23,31 @@ Given two strings of lowercase English letters, $A$ and $B$, perform the followi
 2. Determine if $A$ is lexicographically larger than $B$ (i.e.: does $B$ come before $A$ in the dictionary?).
 3. Capitalize the first letter in $A$ and $B$ and print them on a single line, separated by a space.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains a string $A$.
 The second line contains another string $B$.
 The strings are comprised of only lowercase English letters.
 
-**Output Format**
+### Output format
 
 There are three lines of output:
 For the first line, sum the lengths of $A$ and $B$.
 For the second line, write `Yes` if $A$ is lexicographically greater than $B$ otherwise print `No` instead.
 For the third line, capitalize the first letter in both $A$ and $B$ and print them on a single line, separated by a space.
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 hello
 java
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 9
@@ -46,7 +55,7 @@ No
 Hello Java
 ```
 
-**Explanation**
+**Why**
 
 String A is "hello" and B is "java".
 
@@ -56,9 +65,12 @@ When you capitalize the first letter of both A and B and then print them separat
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `length()` gives the number of characters.
+
+### ✍️ The code you write
 
 ```java
 System.out.println(A.length() + B.length());
@@ -70,11 +82,18 @@ static String capitalize(String s) {
 }
 ```
 
-- `length()` gives the number of characters.
+### 🔍 How it works
+
 - `A.compareTo(B) > 0` means A comes after B in dictionary order.
 - Capitalize: first letter `substring(0, 1).toUpperCase()` + the rest `substring(1)`.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_strings_introduction/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_strings_introduction/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Currency Formatter](../../introduction/java_currency_formatter/README.md) · [☕ All Java exercises](../../../README.md) · [Java Substring](../java_substring/README.md) ➡️

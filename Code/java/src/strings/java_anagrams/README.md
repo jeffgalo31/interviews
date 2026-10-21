@@ -1,12 +1,17 @@
+<!-- study-layout -->
 # Java Anagrams
 
-**Difficulty:** Easy · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-anagrams/problem)
+🟢 **Easy** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-anagrams/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
 
+## 📝 Problem
+
 Two strings, $a$ and $b$, are called anagrams if they contain all the same characters in the same frequencies.  For this challenge, the test is not case-sensitive. For example, the anagrams of `CAT` are `CAT`, `ACT`, `tac`, `TCA`, `aTC`, and `CtA`.
 
-**Function Description**
+### Function Description
 
 Complete the *isAnagram* function in the editor.
 
@@ -15,35 +20,41 @@ Complete the *isAnagram* function in the editor.
 - *string a:* the first string
 - *string b:* the second string
 
-**Returns**
+### Returns
 
 - *boolean:* If $a$ and $b$ are case-insensitive anagrams, return true.  Otherwise, return false.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains a string $a$.
 The second line contains a string $b$.
 
-**Constraints**
+### Constraints
 
 - $1 \le length(a), length(b) \le 50$
 - Strings $a$ and $b$ consist of English alphabetic characters.
 - The comparison should NOT be case sensitive.
 
-**Sample Input 0**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 ```
 anagram
 margana
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 Anagrams
 ```
 
-**Explanation 0**
+**Why**
 
 | Character | Frequency: `anagram` | Frequency: `margana` |
 | --- | --- | --- |
@@ -55,20 +66,22 @@ Anagrams
 
 The two strings contain all the same letters in the same frequencies, so we print "Anagrams".
 
-**Sample Input 1**
+### Example 2
+
+**Input**
 
 ```
 anagramm
 marganaa
 ```
 
-**Sample Output 1**
+**Output**
 
 ```
 Not Anagrams
 ```
 
-**Explanation 1**
+**Why**
 
 | Character | Frequency: `anagramm` | Frequency: `marganaa` |
 | --- | --- | --- |
@@ -80,20 +93,22 @@ Not Anagrams
 
 The two strings don't contain the same number of `a`'s and `m`'s, so we print "Not Anagrams".
 
-**Sample Input 2**
+### Example 3
+
+**Input**
 
 ```
 Hello
 hello
 ```
 
-**Sample Output 2**
+**Output**
 
 ```
 Anagrams
 ```
 
-**Explanation 2**
+**Why**
 
 | Character | Frequency: `Hello` | Frequency: `hello` |
 | --- | --- | --- |
@@ -104,9 +119,12 @@ Anagrams
 
 The two strings contain all the same letters in the same frequencies, so we print "Anagrams".
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Lowercase both strings so the check is not case-sensitive.
+
+### ✍️ The code you write
 
 ```java
 static boolean isAnagram(String a, String b) {
@@ -123,11 +141,18 @@ static boolean isAnagram(String a, String b) {
 }
 ```
 
-- Lowercase both strings so the check is not case-sensitive.
+### 🔍 How it works
+
 - Count letters: +1 for each letter of `a`, −1 for each letter of `b`. Anagrams end with every counter at 0.
 - `c - 'a'` turns a letter into an index 0..25. (HackerRank's challenge asks not to use `java.util` sorting.)
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_anagrams/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_anagrams/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java String Reverse](../java_string_reverse/README.md) · [☕ All Java exercises](../../../README.md) · [Java String Tokens](../java_string_tokens/README.md) ➡️

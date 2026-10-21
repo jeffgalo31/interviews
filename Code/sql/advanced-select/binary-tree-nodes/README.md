@@ -1,6 +1,13 @@
+<!-- study-layout -->
 # Binary Tree Nodes
 
-**Difficulty:** Medium · **Section:** Advanced Select · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/binary-search-tree-1/problem)
+🟡 **Medium** · 📁 **Advanced Select** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/binary-search-tree-1/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
+
+---
+
+## 📝 Problem
 
 You are given a table, **BST**, containing two columns: **N** and **P**, where **N** represents the value of a node in Binary Tree, and **P** is the parent of **N**.
 
@@ -15,7 +22,9 @@ Write a query to find the node type of Binary Tree ordered by the value of the n
 - **Leaf:** If node is leaf node.
 - **Inner:** If node is neither root nor leaf node.
 
-## Sample Input
+## 🧪 Example
+
+**Input**
 
 > On HackerRank the schema, sample table and tree are images; transcribed here as text.
 
@@ -29,7 +38,7 @@ Write a query to find the node type of Binary Tree ordered by the value of the n
 | 8 | 5 |
 | 5 | NULL |
 
-## Sample Output
+**Output**
 
 ```
 1 Leaf
@@ -41,7 +50,7 @@ Write a query to find the node type of Binary Tree ordered by the value of the n
 9 Leaf
 ```
 
-## Explanation
+**Why**
 
 The Binary Tree below illustrates the sample:
 
@@ -53,7 +62,7 @@ The Binary Tree below illustrates the sample:
    1   3 6   9
 ```
 
-## Solution
+## 💡 Solution
 
 ```sql
 SELECT N,
@@ -90,4 +99,13 @@ Walkthrough of the sample (P column values = 2, 2, 8, 8, 5, 5, NULL):
 | 8 | 5 | no | yes | Inner |
 | 9 | 8 | no | no | Leaf |
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank, **choose MySQL** in the language menu; it opens on DB2)
+## 📂 Files
+
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+---
+
+⬅️ [Occupations](../occupations/README.md) · [🗄️ All SQL exercises](../../README.md) · [New Companies](../new-companies/README.md) ➡️

@@ -1,14 +1,21 @@
+<!-- study-layout -->
 # Java BitSet
 
-**Difficulty:** Easy · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-bitset/problem)
+🟢 **Easy** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-bitset/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Java's [BitSet](https://docs.oracle.com/javase/7/docs/api/java/util/BitSet.html) class implements a vector of bit values (i.e.: $false$ ($0$) or $true$ ($1$)) that grows as needed, allowing us to easily manipulate bits while optimizing space (when compared to other collections). Any element having a bit value of $1$ is called a *set bit*.
 
 Given $2$ BitSets, $B_1$ and $B_2$, of size $N$ where all bits in both BitSets are initialized to $0$, perform a series of $M$ operations. After each operation, print the number of *set bits* in the respective BitSets as two space-separated integers on a new line.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains $2$ space-separated integers, $N$ (the length of both BitSets $B_1$ and $B_2$) and $M$ (the number of operations to perform), respectively.
 The $M$ subsequent lines each contain an operation in one of the following forms:
@@ -28,16 +35,18 @@ For the binary operations $AND$, $OR$, and $XOR$, operands are read from left to
 
 $B_2$ is the left operand, and $B_1$ is the right operand. This operation should assign the result of $B_2 \land B_1$ to $B_2$.
 
-**Constraints**
+### Constraints
 
 - $1 \le N \le 1000$
 - $1 \le M \le 10000$
 
-**Output Format**
+### Output format
 
 After each operation, print the respective number of *set bits* in BitSet $B_1$ and BitSet $B_2$ as $2$ space-separated integers on a new line.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5 4
@@ -47,7 +56,7 @@ FLIP 2 2
 OR 2 1
 ```
 
-**Sample Output**
+**Output**
 
 ```
 0 0
@@ -56,7 +65,7 @@ OR 2 1
 1 2
 ```
 
-**Explanation**
+**Why**
 
 Initially: N = 5, M = 4, B1 = {0, 0, 0, 0, 0}, and B2 = {0, 0, 0, 0, 0}. At each step, we print the respective number of set bits in B1 and B2 as a pair of space-separated integers on a new line.
 
@@ -67,9 +76,12 @@ Initially: N = 5, M = 4, B1 = {0, 0, 0, 0, 0}, and B2 = {0, 0, 0, 0, 0}. At each
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Keep the two sets in an array so `1` and `2` from the input pick the set directly.
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -95,11 +107,18 @@ for (int i = 0; i < m; i++) {
 scan.close();
 ```
 
-- Keep the two sets in an array so `1` and `2` from the input pick the set directly.
+### 🔍 How it works
+
 - `and` / `or` / `xor` change the set they're called on (the first operand), as the problem requires.
 - `cardinality()` is the number of set bits.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_bitset/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_bitset/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Dequeue](../java_dequeue/README.md) · [☕ All Java exercises](../../../README.md) · [Java Priority Queue](../java_priority_queue/README.md) ➡️

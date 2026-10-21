@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java SHA-256
 
-**Difficulty:** Medium · **Section:** Advanced · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/sha-256/problem)
+🟡 **Medium** · 📁 **Advanced** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/sha-256/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Examples](#-examples) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Cryptographic hash functions are mathematical operations run on digital data; by comparing the computed *hash* (i.e., the output produced by executing a hashing algorithm) to a known and expected hash value, a person can determine the data's integrity. For example, computing the hash of a downloaded file and comparing the result to a previously published hash result can show whether the download has been modified or tampered with. In addition, cryptographic hash functions are extremely collision-resistant; in other words, it should be extremely difficult to produce the same hash output from two different input values using a cryptographic hash function.
 
@@ -10,38 +15,49 @@ Cryptographic hash functions are mathematical operations run on digital data; by
 
 Given a string, $s$, print its *SHA-256* hash value.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 A single alphanumeric string denoting $s$.
 
-**Constraints**
+### Constraints
 
 - $6 \le |s| \le 20$
 - String $s$ consists of English alphabetic letters (i.e., $[a-zA-Z]$ and/or decimal digits (i.e., $0$ through $9$) only.
 
-**Output Format**
+### Output format
 
 Print the *SHA-256* encryption value of $s$ on a new line.
 
-**Sample Input 0**
+## 🧪 Examples
+
+### Example 1
+
+**Input**
 
 	HelloWorld
 
-**Sample Output 0**
+**Output**
 
 	872e4e50ce9990d8b041330c47c9ddd11bec6b503ae9386a99da8584e9bb12c4
 
-**Sample Input 1**
+### Example 2
+
+**Input**
 
     Javarmi123
 
-**Sample Output 1**
+**Output**
 
 	f1d5f8d75bb55c777207c251d07d9091dc10fe7d6682db869106aacb4b7df678
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** Same as MD5 with `"SHA-256"`: the digest is 32 bytes, printed as 64 hex digits.
+
+### ✍️ The code you write
 
 ```java
 Scanner scan = new Scanner(System.in);
@@ -57,10 +73,17 @@ for (byte b : digest) {
 System.out.println(hex);
 ```
 
-- Same as MD5 with `"SHA-256"`: the digest is 32 bytes, printed as 64 hex digits.
+### 🔍 How it works
+
 - `%02x` keeps the leading zero of small bytes, so the length is always 64.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/advanced/java_sha_256/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/advanced/java_sha_256/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java MD5](../java_md5/README.md) · [☕ All Java exercises](../../../README.md)

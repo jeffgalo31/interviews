@@ -1,6 +1,13 @@
+<!-- study-layout -->
 # The PADS
 
-**Difficulty:** Medium · **Section:** Advanced Select · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/the-pads/problem)
+🟡 **Medium** · 📁 **Advanced Select** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/the-pads/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
+
+---
+
+## 📝 Problem
 
 Generate the following two result sets:
 
@@ -15,7 +22,9 @@ Generate the following two result sets:
 
 **Note:** There will be at least two entries in the table for each type of occupation.
 
-## Input Format
+## 📥 Input & output
+
+### Input format
 
 The **OCCUPATIONS** table is described as follows:
 
@@ -26,7 +35,9 @@ The **OCCUPATIONS** table is described as follows:
 
 Occupation will only contain one of the following values: **Doctor**, **Professor**, **Singer** or **Actor**.
 
-## Sample Input
+## 🧪 Example
+
+**Input**
 
 An **OCCUPATIONS** table that contains the following records:
 
@@ -43,7 +54,7 @@ An **OCCUPATIONS** table that contains the following records:
 | Jenny | Doctor |
 | Priya | Singer |
 
-## Sample Output
+**Output**
 
 ```
 Ashely(P)
@@ -62,13 +73,13 @@ There are a total of 3 actors.
 There are a total of 3 professors.
 ```
 
-## Explanation
+**Why**
 
 The results of the first query are formatted to the problem description's specifications.
 
 The results of the second query are ascendingly ordered first by number of names corresponding to each profession (2 ≤ 2 ≤ 3 ≤ 3), and then alphabetically by profession (doctor ≤ singer, and actor ≤ professor).
 
-## Solution
+## 💡 Solution
 
 Two separate queries, run one after the other: HackerRank prints both result sets together.
 
@@ -106,4 +117,13 @@ ORDER BY COUNT(*), Occupation;
 | Actor | 3 | There are a total of 3 actors. |
 | Professor | 3 | There are a total of 3 professors. |
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank, MySQL)
+## 📂 Files
+
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+---
+
+⬅️ [Type of Triangle](../type-of-triangle/README.md) · [🗄️ All SQL exercises](../../README.md) · [Occupations](../occupations/README.md) ➡️

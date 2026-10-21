@@ -96,7 +96,15 @@ Code/<tech>/<section>/<challenge>/README.md   name, difficulty, section, link, f
 Folder names: the challenge name in lowercase with dashes (`Ollivander's Inventory` -> `ollivanders-inventory`).
 Sections: HackerRank's `track.name` (`Basic Select` -> `basic-select`).
 
-## 7. Verify before committing
+## 7. Apply the study layout
+
+Run `python3 Code/_tools/study_layout.py` from the `interviews` folder. It gives every exercise README the same
+layout (difficulty badge, "On this page" links, 📝 Problem, 📥 Input & output, 🧪 Example, 💡 Solution with the
+key idea first, 📂 Files, previous/next links) and rebuilds each track's index (summary table, how to study,
+and a ⬜/✅ **Done** column). It keeps all the text, and running it again changes nothing. A new tech needs its
+folder and icon added to `TRACK` in the script, plus an intro text like `SQL_TEXT` / `JAVA_TEXT`.
+
+## 8. Verify before committing
 
 - Every runnable file runs without errors.
 - Every challenge with an official sample prints exactly HackerRank's Sample Output.
@@ -104,7 +112,7 @@ Sections: HackerRank's `track.name` (`Basic Select` -> `basic-select`).
 - Every link in the index exists.
 - Copies that use features the local runtime lacks can't be tested locally: say which ones in the summary.
 
-## 8. Commit and push
+## 9. Commit and push
 
 - Author **Jeffrey Galo**, committer **Claude** (`GIT_COMMITTER_NAME=Claude GIT_COMMITTER_EMAIL=noreply@anthropic.com`),
   message ending with the Co-Authored-By / Claude-Session lines.

@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Dequeue
 
-**Difficulty:** Medium · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-dequeue/problem)
+🟡 **Medium** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-dequeue/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution: sliding window](#-solution-sliding-window) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 > Some values were missing from the pasted text (N, M, constraints, time limit, sample counts).
 > They're filled in below from the original HackerRank problem and marked with *(filled in)*.
@@ -23,11 +28,13 @@ In this problem, you are given **N** integers. You need to find the maximum numb
 
 Note: Time limit is **3** second for this problem. *(filled in)*
 
-## Input Format
+## 📥 Input & output
+
+### Input format
 
 The first line of input contains two integers **N** and **M**: representing the total number of integers and the size of the subarray, respectively. The next line contains **N** space separated integers. *(filled in)*
 
-## Constraints *(filled in)*
+### Constraints
 
 - 1 ≤ N ≤ 100000
 - 1 ≤ M ≤ 100000
@@ -35,24 +42,26 @@ The first line of input contains two integers **N** and **M**: representing the 
 
 The numbers in the array will range between **[0, 10000000]**. *(filled in)*
 
-## Output Format
+### Output format
 
 Print the maximum number of unique integers among all possible contiguous subarrays of size **M**.
 
-## Sample Input
+## 🧪 Example
+
+**Input**
 
 ```
 6 3
 5 3 5 2 3 2
 ```
 
-## Sample Output
+**Output**
 
 ```
 3
 ```
 
-## Explanation *(counts filled in)*
+**Why**
 
 In the sample testcase, there are 4 subarrays of contiguous numbers.
 
@@ -63,7 +72,7 @@ In the sample testcase, there are 4 subarrays of contiguous numbers.
 
 In these subarrays, there are 2, 3, 3, 2 unique numbers, respectively. The maximum amount of unique numbers among all possible contiguous subarrays is 3.
 
-## Solution: sliding window
+## 💡 Solution: sliding window
 
 Checking every window from scratch costs N × M steps, up to 10 billion: too slow for the time limit.
 Instead, **slide** one window across the array and update it in 2 steps per number:
@@ -91,3 +100,14 @@ Walkthrough of the sample (M = 3):
 | 2    | [2, 3, 2]      | {2:2, 3:1}       | 2      | 3    |
 
 Each number is added once and removed once, so the total work is about N steps.
+
+## 📂 Files
+
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_dequeue/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Sort](../java_sort/README.md) · [☕ All Java exercises](../../../README.md) · [Java BitSet](../java_bitset/README.md) ➡️

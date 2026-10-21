@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # The Report
 
-**Difficulty:** Medium · **Section:** Basic Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/the-report/problem)
+🟡 **Medium** · 📁 **Basic Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/the-report/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 You are given two tables:&nbsp;<em>Students</em>&nbsp;and <em>Grades</em>.&nbsp;<em>Students</em>&nbsp;contains three columns <em>ID</em>, <em>Name</em> and <em>Marks</em>.
 
@@ -31,7 +36,9 @@ You are given two tables:&nbsp;<em>Students</em>&nbsp;and <em>Grades</em>.&nbsp;
 
 Write a query to help Eve.
 
-__Sample Input__
+## 🧪 Example
+
+**Input**
 
 | ID | Name | Marks |
 |---|---|---|
@@ -42,7 +49,7 @@ __Sample Input__
 | 5 | Ashley | 63 |
 | 6 | Jane | 81 |
 
-__Sample Output__
+**Output**
 
     Maria 10 99
     Jane 9 81
@@ -52,11 +59,8 @@ __Sample Output__
     NULL 7 68
 
 <br>
-__Note__
 
-Print &quot;NULL&quot;&nbsp; as the name if the grade is less than 8.
-
-__Explanation__
+**Why**
 
 Consider the following table with the grades assigned to the students:
 
@@ -78,7 +82,16 @@ So, the following students got <em>8</em>, <em>9</em> or <em>10</em> grades:
 	<li><em>Scarlet (grade 8)</em></li>
 </ul>
 
-## Solution
+### Note
+
+Print &quot;NULL&quot;&nbsp; as the name if the grade is less than 8.
+
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** The join is a **range**: each mark matches the grade row whose `Min_Mark`..`Max_Mark` contains it.
+
+### ✍️ The query
 
 ```sql
 SELECT CASE WHEN g.Grade >= 8 THEN s.Name ELSE NULL END AS Name,
@@ -91,10 +104,20 @@ ORDER BY g.Grade DESC,
          s.Marks;
 ```
 
-- The join is a **range**: each mark matches the grade row whose `Min_Mark`..`Max_Mark` contains it.
+### 🔍 How it works
+
 - `CASE` hides names below grade 8 (prints NULL).
 - Sort: grade high → low; then name (only for grades 8-10, NULL for the rest); then marks ascending, which orders the NULL rows.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Average Population of Each Continent](../average-population-of-each-continent/README.md) · [🗄️ All SQL exercises](../../README.md) · [Top Competitors](../top-competitors/README.md) ➡️

@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Regex 2 - Duplicate Words
 
-**Difficulty:** Medium · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/duplicate-word/problem)
+🟡 **Medium** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/duplicate-word/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 In this challenge, we use regular expressions (RegEx) to remove instances of words that are repeated more than once, but retain the *first occurrence* of any case-insensitive repeated word. For example, the words `love` and `to` are repeated in the sentence `I love Love to To tO code`. Can you complete the code in the editor so it will turn `I love Love to To tO code` into `I love to code`?
 
@@ -14,23 +19,27 @@ To solve this challenge, complete the following three lines:
 
 **Note:** This challenge uses a custom checker; you will fail the challenge if you modify anything other than the three locations that the comments direct you to complete. To restore the editor's original stub code, create a new buffer by clicking on the branch icon in the top left of the editor.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following input is handled for you the given stub code:
 
 The first line contains an integer, $n$, denoting the number of sentences.
 Each of the $n$ subsequent lines contains a single sentence consisting of English alphabetic letters and whitespace characters.
 
-**Constraints**
+### Constraints
 
 - Each sentence consists of *at most* $10^4$ English alphabetic letters and whitespaces.
 - $1\le n \le 100$
 
-**Output Format**
+### Output format
 
 Stub code in the editor prints the sentence modified by the *replaceAll* line to stdout. The modified string must be a modified version of the initial sentence where all repeat occurrences of each word are removed.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 5
@@ -41,7 +50,7 @@ in inthe
 Hello hello Ab aB
 ```
 
-**Sample Output**
+**Output**
 
 ```
 Goodbye bye world
@@ -51,7 +60,7 @@ in inthe
 Hello Ab
 ```
 
-**Explanation**
+**Why**
 
 - We remove the second occurrence of `bye` and the second and third occurrences of `world` from `Goodbye bye bye world world world` to get `Goodbye bye world`.
 - We remove the second occurrence of `went` and the second and third occurrences of `to` from `Sam went went to to to his business` to get `Sam went to his business`.
@@ -59,9 +68,12 @@ Hello Ab
 - The sentence `in inthe` has no repeated words, so we do not modify it.
 - We remove the second occurrence of `ab` from `Hello hello Ab aB` to get `Hello Ab`. It's important to note that our matching is case-insensitive, and we specifically retained the first occurrence of the matched word in our final string.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `\b(\w+)` captures a whole word; `(?:\W+\1\b)+` matches one or more repeats of that **same** word (`\1`) after separators.
+
+### ✍️ The code you write
 
 ```java
 String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
@@ -70,12 +82,19 @@ Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 input = input.replaceAll(m.group(), m.group(1));
 ```
 
-- `\b(\w+)` captures a whole word; `(?:\W+\1\b)+` matches one or more repeats of that **same** word (`\1`) after separators.
+### 🔍 How it works
+
 - `Pattern.CASE_INSENSITIVE` makes `bye` and `Bye` count as the same word.
 - Replace the whole matched run (`m.group()`) with its first word (`m.group(1)`), which keeps the original capitalization.
 - Regex backslashes are doubled inside Java strings.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/strings/java_regex_2_duplicate_words/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_regex_2_duplicate_words/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Regex](../java_regex/README.md) · [☕ All Java exercises](../../../README.md) · [Valid Username Regular Expression](../valid_username_regular_expression/README.md) ➡️

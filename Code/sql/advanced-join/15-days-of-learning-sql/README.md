@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # 15 Days of Learning SQL
 
-**Difficulty:** Hard · **Section:** Advanced Join · **Track:** HackerRank SQL · [Open on HackerRank](https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem)
+🔴 **Hard** · 📁 **Advanced Join** · 🗄️ HackerRank SQL · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Julia conducted a $15$ days of learning SQL contest. The start date of the contest was _March 01, 2016_ and the end date was _March 15, 2016_.
 
@@ -10,7 +15,9 @@ Write a query to print total number of unique hackers who made at least $1$ subm
 
 ----
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The following tables hold contest data:
 
@@ -30,7 +37,9 @@ The following tables hold contest data:
 | hacker_id | Integer |
 | score | Integer |
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 For the following sample input, assume that the end date of the contest was March 06, 2016.
 
@@ -73,7 +82,7 @@ Hackers Table:
 | 2016-03-05 | 90006 | 36396 | 40 |
 | 2016-03-06 | 90404 | 20703 | 0 |
 
-**Sample Output**
+**Output**
 
 ```
 2016-03-01 4 20703 Angela
@@ -84,7 +93,7 @@ Hackers Table:
 2016-03-06 1 20703 Angela
 ```
 
-**Explanation**
+**Why**
 
 On March 01, 2016 hackers 20703, 36396, 53473, and 79722 made submissions. There are 4 unique hackers who made at least one submission each day. As each hacker made one submission, 20703 is considered to be the hacker who made maximum number of submissions on this day. The name of the hacker is Angela.
 
@@ -100,7 +109,12 @@ On March 06, 2016 only 20703 made submission, so there is only 1 unique hacker w
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
+
+> [!TIP]
+> **Key idea:** One output row per contest day (`SELECT DISTINCT submission_date`).
+
+### ✍️ The query
 
 ```sql
 SELECT d.submission_date,
@@ -131,13 +145,24 @@ FROM (SELECT DISTINCT submission_date FROM Submissions) d
 ORDER BY d.submission_date;
 ```
 
-- One output row per contest day (`SELECT DISTINCT submission_date`).
+### 🔍 How it works
+
 - **Streak count:** a hacker is still in on day N if they submitted on all N−1 earlier days, i.e. their number of distinct earlier submission dates equals the days since March 1.
 - **Top hacker:** group that day's submissions by hacker, most submissions first, lowest id on ties, `LIMIT 1`; the same subquery is reused to look up the name.
 - Days since start: `DATEDIFF(date, '2016-03-01')` in MySQL, `julianday` difference in SQLite.
 
-**Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `DATEDIFF(a, b)` → `CAST(julianday(a) - julianday(b) AS INTEGER)`.
+> [!NOTE]
+> **Local SQLite version** ([solution.sql](solution.sql)) differs only where SQLite lacks a MySQL function: `DATEDIFF(a, b)` → `CAST(julianday(a) - julianday(b) AS INTEGER)`.
 
-**Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Sample Output above.
+## 📂 Files
 
-Files: [solution.sql](solution.sql) (runs locally on SQLite) · [solution_hackerrank.sql](solution_hackerrank.sql) (paste into HackerRank and **choose MySQL** in the language menu)
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [solution.sql](solution.sql) | Runnable, commented version on SQLite. In VS Code: **Terminal → Run Task → Run SQL file (SQLite)** |
+| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |
+
+🧪 **Sample data in solution.sql:** the official HackerRank sample (transcribed from HackerRank's images), so the output matches the Example above.
+
+---
+
+⬅️ [Interviews](../interviews/README.md) · [🗄️ All SQL exercises](../../README.md) · [Draw The Triangle 1](../../alternative-queries/draw-the-triangle-1/README.md) ➡️

@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Priority Queue
 
-**Difficulty:** Medium · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-priority-queue/problem)
+🟡 **Medium** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-priority-queue/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 In computer science, a priority queue is an abstract data type which is like a regular queue, but where additionally each element has a "priority" associated with it. In a priority queue, an element with high priority is served before an element with low priority. - [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue)
 ***
@@ -29,7 +34,9 @@ Create the following two classes:
     - The method `double getCGPA()` to return the CGPA of the student.
 - The *Priorities* class should implement the method `List<Student> getStudents(List<String> events)` to process all the given events and return all the students yet to be served in the priority order.
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains an integer, $n$, describing the total number of events. Each of the $n$ subsequent lines will be of the following two forms:
 
@@ -38,18 +45,20 @@ The first line contains an integer, $n$, describing the total number of events. 
 
 The locked stub code in the editor reads the input and tests the correctness of the *Student* and *Priorities* classes implementation.
 
-**Constraints**
+### Constraints
 
 - $2 \le n \le 1000$
 - $0 \le CGPA \le 4.00$
 - $1 \le id \le 10^{5}$
 - $2 \le |name| \le 30$
 
-**Output Format**
+### Output format
 
 The locked stub code prints the names of the students yet to be served in the priority order. If there are no such student, then the code prints `EMPTY`.
 
-**Sample Input 0**
+## 🧪 Example
+
+**Input**
 
 ```
 12
@@ -67,7 +76,7 @@ ENTER Dan 3.95 50
 SERVED
 ```
 
-**Sample Output 0**
+**Output**
 
 ```
 Dan
@@ -76,7 +85,7 @@ Shafaet
 Maria
 ```
 
-**Explanation 0**
+**Why**
 
 In this case, the number of events is 12. Let the name of the queue be Q.
 
@@ -92,9 +101,12 @@ In this case, the number of events is 12. Let the name of the queue be Q.
 
 As all events are completed, the name of each of the remaining students is printed on a new line.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** A `PriorityQueue` always gives back the "smallest" element by its comparator, so build the comparator from the 3 rules.
+
+### ✍️ The code you write
 
 ```java
 import java.util.Comparator;
@@ -141,11 +153,18 @@ class Priorities {
 }
 ```
 
-- A `PriorityQueue` always gives back the "smallest" element by its comparator, so build the comparator from the 3 rules.
+### 🔍 How it works
+
 - `SERVED` is `poll()`, which removes the top student (and does nothing harmful on an empty queue).
 - Iterating a `PriorityQueue` is **not** in order; `poll()` it repeatedly to list the remaining students in priority order.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_priority_queue/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_priority_queue/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java BitSet](../java_bitset/README.md) · [☕ All Java exercises](../../../README.md) · [Java Inheritance I](../../object_oriented_programming/java_inheritance_i/README.md) ➡️

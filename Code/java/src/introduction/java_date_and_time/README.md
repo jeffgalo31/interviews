@@ -1,15 +1,21 @@
+<!-- study-layout -->
 # Java Date and Time
 
-**Difficulty:** Easy · **Section:** Introduction · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-date-and-time/problem)
+🟢 **Easy** · 📁 **Introduction** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-date-and-time/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 The [Calendar class](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html) is an abstract class that provides methods for converting between a specific instant in time and a set of calendar fields such as YEAR, MONTH, DAY_OF_MONTH, HOUR, and so on, and for manipulating the calendar fields, such as getting the date of the next week.
 ***
 
 You are given a date. You just need to write the method, $getDay$, which returns the *day* on that date.  To simplify your task, we have provided a portion of the code in the editor.
 
-**Example**
+### Example
+
 $month = 8$
 $day = 14$
 $year = 2017$
@@ -26,7 +32,7 @@ SUN MON TUE WED THU FRI SAT
  27  28  29  30  31
 ```
 
-**Function Description**
+### Function Description
 
 Complete the *findDay* function in the editor below.
 
@@ -36,39 +42,46 @@ Complete the *findDay* function in the editor below.
 - *int:* day
 - *int:* year
 
-**Returns**
+### Returns
 
 - *string:* the day of the week in capital letters
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 A single line of input containing the space separated month, day and year, respectively, in $MM$ $DD$ $YYYY$ format.
 
-**Constraints**
+### Constraints
 
 * $ 2000 < year < 3000 $
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 08 05 2015
 ```
 
-**Sample Output**
+**Output**
 
 ```
 WEDNESDAY
 ```
 
-**Explanation**
+**Why**
 
 The day on August 5th 2015 was `WEDNESDAY`.
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** `Calendar.set(year, month - 1, day)`: Calendar counts months from 0, so August (8) is 7.
+
+### ✍️ The code you write
 
 ```java
 class Result {
@@ -92,12 +105,19 @@ class Result {
 }
 ```
 
-- `Calendar.set(year, month - 1, day)`: Calendar counts months from 0, so August (8) is 7.
+### 🔍 How it works
+
 - `getDisplayName(DAY_OF_WEEK, LONG, Locale.US)` gives "Wednesday"; `toUpperCase()` makes it "WEDNESDAY".
 - Modern alternative: `java.time.LocalDate.of(year, month, day).getDayOfWeek().name()`.
 - HackerRank writes the answer to a file (`OUTPUT_PATH`); the local version writes to the console instead.
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/introduction/java_date_and_time/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/introduction/java_date_and_time/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Int to String](../java_int_to_string/README.md) · [☕ All Java exercises](../../../README.md) · [Java Currency Formatter](../java_currency_formatter/README.md) ➡️

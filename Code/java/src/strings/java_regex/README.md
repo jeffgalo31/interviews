@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java Regex
 
-**Difficulty:** Medium · **Section:** Strings · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-regex/problem)
+🟡 **Medium** · 📁 **Strings** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-regex/problem)
+
+**On this page:** [📝 Problem](#-problem) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Write a class called MyRegex which will contain a string pattern. You need to write a regular expression and assign it to the pattern such that it can be used to validate an IP address. Use the following definition of an IP address:
 
@@ -34,7 +39,9 @@ Just write the MyRegex class which contains a String . The string should contain
 
 (MyRegex class MUST NOT be public)
 
-## Sample Input
+## 🧪 Example
+
+**Input**
 
 ```
 000.12.12.034
@@ -45,7 +52,7 @@ Just write the MyRegex class which contains a String . The string should contain
 Hello.IP
 ```
 
-## Sample Output
+**Output**
 
 ```
 true
@@ -56,7 +63,7 @@ false
 false
 ```
 
-## Solution
+## 💡 Solution
 
 See `Solution.java`. The pattern:
 
@@ -106,3 +113,14 @@ so the highest it can go is `199`. Anything from 200 up is handled by the other 
 - `String.matches()` must match the **whole** string, so no `^`/`$` anchors are needed.
   That's what rejects `23.45.22.32.`, `.213.123.23.32` and five-part addresses.
 - In Java source every `\` is doubled: `\d` is written `"\\d"` and `\.` is `"\\."`.
+
+## 📂 Files
+
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/strings/java_regex/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Pattern Syntax Checker](../pattern_syntax_checker/README.md) · [☕ All Java exercises](../../../README.md) · [Java Regex 2 - Duplicate Words](../java_regex_2_duplicate_words/README.md) ➡️

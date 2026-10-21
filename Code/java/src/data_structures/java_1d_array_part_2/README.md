@@ -1,8 +1,13 @@
+<!-- study-layout -->
 # Java 1D Array (Part 2)
 
-**Difficulty:** Medium · **Section:** Data Structures · **Track:** HackerRank Java · [Open on HackerRank](https://www.hackerrank.com/challenges/java-1d-array/problem)
+🟡 **Medium** · 📁 **Data Structures** · ☕ HackerRank Java · [Open on HackerRank ↗](https://www.hackerrank.com/challenges/java-1d-array/problem)
+
+**On this page:** [📝 Problem](#-problem) · [📥 Input & output](#-input--output) · [🧪 Example](#-example) · [💡 Solution](#-solution) · [📂 Files](#-files)
 
 ---
+
+## 📝 Problem
 
 Let's play a game on an array! You're standing at index $0$ of an $n$-element array named $game$. From some index $i$ (where $0 \le i \lt n$), you can perform one of the following moves:
 
@@ -14,7 +19,7 @@ Let's play a game on an array! You're standing at index $0$ of an $n$-element ar
 
 In other words, you can move from index $i$ to index $i+1$, $i-1$, or $i + leap$ as long as the destination index is a cell containing a $0$. If the destination index is greater than $n-1$, you win the game.
 
-**Function Description**
+### Function Description
 
 Complete the *canWin* function in the editor below.
 
@@ -23,11 +28,13 @@ Complete the *canWin* function in the editor below.
 - *int leap:* the size of the leap
 - *int game[n]:* the array to traverse
 
-**Returns**
+### Returns
 
 - *boolean:* true if the game can be won, otherwise false
 
-**Input Format**
+## 📥 Input & output
+
+### Input format
 
 The first line contains an integer, $q$, denoting the number of queries (i.e., function calls).
 The $2 \cdot q$ subsequent lines describe each query over two lines:
@@ -35,14 +42,16 @@ The $2 \cdot q$ subsequent lines describe each query over two lines:
 1. The first line contains two space-separated integers describing the respective values of $n$ and $leap$.
 2. The second line contains $n$ space-separated binary integers (i.e., zeroes and ones) describing the respective values of $game_0, game_1, \ldots, game_{n-1}$.
 
-**Constraints**
+### Constraints
 
 * $1 \le q \le 5000$
 * $2 \le n \le 100$
 * $0 \le leap \le 100$
 * It is guaranteed that the value of $game[0]$ is always $0$.
 
-**Sample Input**
+## 🧪 Example
+
+**Input**
 
 ```
 STDIN           Function
@@ -58,7 +67,7 @@ STDIN           Function
 0 1 0
 ```
 
-**Sample Output**
+**Output**
 
 ```
 YES
@@ -67,7 +76,7 @@ NO
 NO
 ```
 
-**Explanation**
+**Why**
 
 We perform the following q = 4 queries:
 
@@ -78,9 +87,12 @@ We perform the following q = 4 queries:
 
 > Numbers that appear as formulas on HackerRank are filled in here.
 
-## Solution
+## 💡 Solution
 
-The part you write:
+> [!TIP]
+> **Key idea:** A depth-first search over the three moves: jump `i + leap`, step forward `i + 1`, step back `i - 1`.
+
+### ✍️ The code you write
 
 ```java
 public static boolean canWin(int leap, int[] game) {
@@ -98,11 +110,18 @@ private static boolean canWinFrom(int i, int leap, int[] game) {
 }
 ```
 
-- A depth-first search over the three moves: jump `i + leap`, step forward `i + 1`, step back `i - 1`.
+### 🔍 How it works
+
 - Reaching any index ≥ n means you left the array: win.
 - Mark each visited cell as 1 so moving back and forth can't loop forever (each cell is visited at most once).
 
-**Files**
+## 📂 Files
 
-- [Solution.java](Solution.java): runnable and commented. In VS Code click **Run** above `main`, or `java src/data_structures/java_1d_array_part_2/Solution.java` from the `java` folder (with no input it uses the sample input).
-- [Solution_hackerrank.java](Solution_hackerrank.java): HackerRank's exact program with the solution filled in. If HackerRank shows part of the code as locked, paste only the lines between the `// ---- your code ----` markers.
+| | File | What it's for |
+|---|---|---|
+| ▶️ | [Solution.java](Solution.java) | Runnable, commented version. In VS Code click **Run** above `main`; terminal (in `java`): `java src/data_structures/java_1d_array_part_2/Solution.java` |
+| 📋 | [Solution_hackerrank.java](Solution_hackerrank.java) | HackerRank's exact program: paste it whole, or only the `// ---- your code ----` part if the rest is locked |
+
+---
+
+⬅️ [Java Arraylist](../java_arraylist/README.md) · [☕ All Java exercises](../../../README.md) · [Java List](../java_list/README.md) ➡️
