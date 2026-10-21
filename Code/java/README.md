@@ -147,4 +147,4 @@ printf '24\n' | java src/introduction/java_if_else/Solution.java  # your own inp
 
 🛠️ How this was built (and how to do the same for another tech): [HACKERRANK-IMPORT.md](../HACKERRANK-IMPORT.md) · generator: [_tools/](_tools/)
 
-**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [🗄️ SQL exercises](../sql/README.md)
+**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [🗄️ SQL exercises](../sql/README.md) · [⚛️ React exercises](../react/README.md)

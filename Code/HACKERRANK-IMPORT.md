@@ -140,3 +140,21 @@ folder and icon added to `TRACK` in the script, plus an intro text like `SQL_TEX
   Prime Checker's locked code says `misc.Prime`; Covariant Return Types' diagram says Lotus but the code uses Lily;
   Java Factory's text says "ordered Fast Food" but the code prints "ordered a Fast Food".
 
+
+## Lessons from the React track
+
+- **Frontend challenges:** every React challenge has `kind: frontend`. The REST API gives the statement but **not** the
+  starter project (components, data files, tests), so the solutions are written from the statement and the preview GIFs.
+- **Layout:** one Vite + Vitest project (`Code/react`), one folder per exercise under `src/exercises/<section>/<slug>/`
+  with `Solution.jsx`, `Solution.test.jsx`, optional `data.js`, and `README.md`. `src/exercises/index.js` registers them
+  for the picker (`npm run dev`). READMEs come from `_tools/readmes.py` (statement + GIFs in words + solution notes), then
+  `study_layout.py react`.
+- **Data:** use the values visible in HackerRank's previews (Article Sorting, Slideshow, CryptoRank). When the data
+  only exists in the starter project (Patient Medical Records), write clearly-labelled sample data with the same shape.
+- **Tests:** write them from the "Detailed Requirements" and "Sample Interaction" with Testing Library queries
+  (`getByRole`, `getByLabelText`, `getByTestId`). Use the `data-testid`s HackerRank's starters use where known.
+  Check a test suite catches a broken solution, not just that it passes.
+- **No npm in Claude's workspace:** the tests were run in Chromium with small stand-ins for Vitest/Testing Library,
+  bundled with esbuild. On the Mac, `npm install` then `npm test` runs the real tools.
+- **Known HackerRank quirks:** CryptoRank's sample says "10000" exceeds a $17042.67 balance; Slideshow's statement calls
+  the app "Basic Slideshow"; Employee Validation has two "User Action 3" steps.

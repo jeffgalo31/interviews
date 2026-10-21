@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Give every exercise README (Code/sql, Code/java) the same study-friendly layout and rebuild the two indexes.
+"""Give every exercise README (Code/sql, Code/java, Code/react) the same study-friendly layout and rebuild the indexes.
 
-usage (from the interviews folder):  python3 Code/_tools/study_layout.py
+usage (from the interviews folder):  python3 Code/_tools/study_layout.py [sql] [java] [react]   (default: all)
 Safe to run again: READMEs already in the new layout are left as they are, indexes are rebuilt.
 """
 import os, re, sys
@@ -10,7 +10,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 MARK = "<!-- study-layout -->"
 DIFF = {"Easy": "🟢", "Medium": "🟡", "Hard": "🔴"}
 NUM = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"]
-TRACK = {"sql": ("🗄️", "SQL"), "java": ("☕", "Java")}
+TRACK = {"sql": ("🗄️", "SQL"), "java": ("☕", "Java"), "react": ("⚛️", "React")}
 
 META_RE = re.compile(r"^\*\*Difficulty:\*\* (\w+) · \*\*Section:\*\* (.+?) · \*\*Track:\*\* HackerRank (\w+) · \[Open on HackerRank\]\((\S+)\)", re.M)
 H_BOLD = re.compile(r"^\s*(?:\*\*|__)\s*([A-Za-z][A-Za-z0-9 \-/]*?)\s*:?\s*(?:\*\*|__)\s*:?\s*(?:<br\s*/?>)?\s*$")
@@ -27,6 +27,8 @@ def classify(name):
     m = re.match(r"(sample input|sample output|explanation)\s*(\d*)$", low)
     if m:
         return {"sample input": "in", "sample output": "out", "explanation": "expl"}[m.group(1)], m.group(2) or "0", clean
+    if low == "sample interaction":
+        return "ex", None, clean
     if low in ("input format", "constraints", "output format"):
         return "io", low, clean
     return "generic", None, clean
@@ -52,13 +54,15 @@ def tidy(lines):
 
 def render_statement(lines):
     intro, sections = split_statement(lines)
-    first_ex = next((i for i, s in enumerate(sections) if s[0] in ("in", "out", "expl")), len(sections))
+    first_ex = next((i for i, s in enumerate(sections) if s[0] in ("in", "out", "expl", "ex")), len(sections))
     problem = [tidy(intro)] if tidy(intro) else []
     io, after = [], []
     examples = {}
     order = []
     for i, (kind, key, title, body) in enumerate(sections):
         body_t = tidy(body)
+        if kind == "ex":
+            continue
         if kind == "io":
             io.append(f"### {title[0].upper() + title[1:].lower()}\n\n{body_t}")
         elif kind in ("in", "out", "expl"):
@@ -84,6 +88,7 @@ def render_statement(lines):
         ex_parts.append("\n\n".join(part))
     out["examples"] = "\n\n".join(ex_parts + after)
     out["n_examples"] = len(order)
+    out["interaction"] = any(s[0] == "ex" for s in sections)
     return out
 
 def parse_solution(lines):
@@ -110,7 +115,7 @@ def render_solution(sol, lang):
     parts = []
     if bullets:
         parts.append("> [!TIP]\n> **Key idea:** " + bullets[0])
-    parts.append(("### ✍️ The query\n\n" if lang == "SQL" else "### ✍️ The code you write\n\n") + code)
+    parts.append({"SQL": "### ✍️ The query\n\n", "React": "### ✍️ The component\n\n"}.get(lang, "### ✍️ The code you write\n\n") + code)
     if len(bullets) > 1:
         parts.append("### 🔍 How it works\n\n" + "\n".join("- " + b for b in bullets[1:]))
     if sol["local"]:
@@ -124,6 +129,15 @@ def files_table(lang, readme_path, sample_note):
                 "| 📋 | [solution_hackerrank.sql](solution_hackerrank.sql) | Paste into HackerRank and choose **MySQL** in the language menu |"]
         if sample_note:
             rows += ["", f"🧪 **Sample data in solution.sql:** {sample_note.replace('the Sample Output above', 'the Example above')}"]
+    elif lang == "React":
+        d = os.path.dirname(readme_path)
+        rows = ["| | File | What it's for |", "|---|---|---|",
+                "| ⚛️ | [Solution.jsx](Solution.jsx) | The component, commented. See it with `npm run dev` (in `react`) and pick it in the sidebar |",
+                "| 🧪 | [Solution.test.jsx](Solution.test.jsx) | Tests built from HackerRank's requirements: `npm test` |"]
+        for f in sorted(os.listdir(d)):
+            if f.endswith(".js") and not f.endswith(".test.js"):
+                rows.append(f"| 🗂️ | [{f}]({f}) | Data the component uses (same shape as in HackerRank's starter project) |")
+        rows += ["", "📋 **On HackerRank:** the starter project already has the markup and `data-testid`s; copy the state and handlers into its component."]
     else:
         rel = os.path.relpath(os.path.dirname(readme_path), os.path.join(ROOT, "java")).replace(os.sep, "/")
         rows = ["| | File | What it's for |", "|---|---|---|",
@@ -149,7 +163,7 @@ def restyle(path, nav):
 
     icon, _ = TRACK[lang.lower()]
     heads = [("📝 Problem", st["problem"]), ("📥 Input & output", st["io"]),
-             ("🧪 Examples" if st["n_examples"] > 1 else "🧪 Example", st["examples"]),
+             ("🧪 Sample interaction" if st["interaction"] else "🧪 Examples" if st["n_examples"] > 1 else "🧪 Example", st["examples"]),
              ("💡 Solution" + (sol_title if sol_title else ""), render_solution(sol, lang)),
              ("📂 Files", files_table(lang, path, sol["sample"]))]
     heads = [(h, b) for h, b in heads if b]
@@ -205,11 +219,15 @@ def build_index(track, rows, intro, how, running, extra, footer):
     if extra:
         L += [extra, ""]
     for n, sec in enumerate(sections):
-        L += [f"## {NUM[n]} {sec} ({count(sec)})", "", "| # | Challenge | Level | Runnable | HackerRank | Done |", "|---|---|---|---|---|---|"]
+        cols = "| # | Challenge | Level | Component | Tests | Done |" if track == "react" else "| # | Challenge | Level | Runnable | HackerRank | Done |"
+        L += [f"## {NUM[n]} {sec} ({count(sec)})", "", cols, "|---|---|---|---|---|---|"]
         for i, r in enumerate([r for r in rows if r["section"] == sec], 1):
             d = os.path.relpath(r["dir"], base).replace(os.sep, "/")
-            run_f, hr_f = ("solution.sql", "solution_hackerrank.sql") if track == "sql" else ("Solution.java", "Solution_hackerrank.java")
-            L.append(f"| {i} | [{r['name']}]({d}/README.md) | {DIFF[r['diff']]} {r['diff']} | [▶️ {run_f}]({d}/{run_f}) | [📋 copy]({d}/{hr_f}) | ⬜ |")
+            run_f, hr_f = {"sql": ("solution.sql", "solution_hackerrank.sql"), "java": ("Solution.java", "Solution_hackerrank.java"),
+                           "react": ("Solution.jsx", "Solution.test.jsx")}[track]
+            second = f"[🧪 tests]({d}/{hr_f})" if track == "react" else f"[📋 copy]({d}/{hr_f})"
+            first = f"[⚛️ {run_f}]({d}/{run_f})" if track == "react" else f"[▶️ {run_f}]({d}/{run_f})"
+            L.append(f"| {i} | [{r['name']}]({d}/README.md) | {DIFF[r['diff']]} {r['diff']} | {first} | {second} | ⬜ |")
         L.append("")
     L += ["> [!TIP]", "> Change ⬜ to ✅ in the **Done** column as you finish each challenge.", "", "---", "", footer, ""]
     open(os.path.join(base, "README.md"), "w", encoding="utf-8").write("\n".join(L))
@@ -235,7 +253,7 @@ SQL_TEXT = dict(
           "| `DATEDIFF(a, b)` | `julianday(a) - julianday(b)` | days between dates |\n"
           "| `REPEAT(s, n)` | `REPLACE(HEX(ZEROBLOB(n)), '00', s)` | repeat a string |",
     footer="🛠️ How this was built (and how to do the same for another tech): [HACKERRANK-IMPORT.md](../HACKERRANK-IMPORT.md) · generator: [_tools/gen.py](_tools/gen.py)\n\n"
-           "**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [☕ Java exercises](../java/README.md)")
+           "**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [☕ Java exercises](../java/README.md) · [⚛️ React exercises](../react/README.md)")
 
 JAVA_TEXT = dict(
     intro="All **64** challenges from the [HackerRank Java track](https://www.hackerrank.com/domains/java), grouped by HackerRank section, "
@@ -256,11 +274,36 @@ JAVA_TEXT = dict(
           "| ▶️ | `Solution.java` | Runnable and commented; falls back to HackerRank's sample input |\n"
           "| 📋 | `Solution_hackerrank.java` | HackerRank's exact program; your part is between `// ---- your code ----` markers |",
     footer="🛠️ How this was built (and how to do the same for another tech): [HACKERRANK-IMPORT.md](../HACKERRANK-IMPORT.md) · generator: [_tools/](_tools/)\n\n"
-           "**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [🗄️ SQL exercises](../sql/README.md)")
+           "**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [🗄️ SQL exercises](../sql/README.md) · [⚛️ React exercises](../react/README.md)")
+
+REACT_TEXT = dict(
+    intro="All **10** challenges from the [HackerRank React track](https://www.hackerrank.com/domains/react), grouped by HackerRank section, "
+          "with the same names and difficulty. Every problem is in text (the animated previews are described in words), solved, "
+          "explained, and covered by tests built from HackerRank's requirements.",
+    how="1. Read the problem in the exercise's `README.md` and try building the component yourself.\n"
+        "2. Check **🧪 Sample interaction**: what the user does and what must appear.\n"
+        "3. Read **💡 Solution**: the key idea first, then the component and how it works.\n"
+        "4. Run it with `npm run dev` and click through it; run `npm test` to check it against the requirements.\n"
+        "5. Solve it on HackerRank (its starter project already has the markup and `data-testid`s) and mark it ✅ below.",
+    running="Needs [Node.js](https://nodejs.org) 20 or newer. In a terminal in this `react` folder:\n\n"
+            "```\nnpm install        # once: downloads React, Vite, Vitest, Testing Library\n"
+            "npm run dev        # opens the exercise picker at http://localhost:5173\n"
+            "npm test           # runs every Solution.test.jsx\n"
+            "npx vitest run src/exercises/components/slideshow   # only one exercise\n```\n\n"
+            "> [!TIP]\n> Practise by renaming a `Solution.jsx`, writing your own version in its place, and running `npm run test:watch`: "
+            "the tests rerun every time you save.",
+    extra="## 📄 What's in each exercise\n\n| | File | What it's for |\n|---|---|---|\n"
+          "| 📝 | `README.md` | The problem, the sample interaction, and the explained solution |\n"
+          "| ⚛️ | `Solution.jsx` | The component, commented |\n"
+          "| 🧪 | `Solution.test.jsx` | Vitest + Testing Library tests from the requirements |\n"
+          "| 🗂️ | `data.js` / `medicalRecords.js` | Sample data, when the exercise needs some |",
+    footer="🛠️ How this was built (and how to do the same for another tech): [HACKERRANK-IMPORT.md](../HACKERRANK-IMPORT.md) · generator: [_tools/readmes.py](_tools/readmes.py)\n\n"
+           "**Back to:** [All Topics](../../Overview/All-Topics.md) · [Practices](../../Overview/Practices.md) · [🗄️ SQL exercises](../sql/README.md) · [☕ Java exercises](../java/README.md)")
 
 if __name__ == "__main__":
     changed = 0
-    for track, text in (("sql", SQL_TEXT), ("java", JAVA_TEXT)):
+    tracks = {"sql": SQL_TEXT, "java": JAVA_TEXT, "react": REACT_TEXT}
+    for track, text in ((t, tracks[t]) for t in (sys.argv[1:] or tracks)):
         rows = exercises(track)
         for i, r in enumerate(rows):
             changed += restyle(os.path.join(r["dir"], "README.md"), nav_line(rows, i, track))
