@@ -28,7 +28,7 @@ Your LinkedIn title says *Full-Stack Software Engineer*; the job says *Data Engi
 3. **Deep dive on 1–3 projects**: architecture, *your* part, decisions, trade-offs, results. Not code.
 4. **How you work**: Agile ceremonies, code reviews, pair programming, onboarding people, handling production issues, tech debt.
 5. **Fit and logistics**: onsite Chicago (you're hybrid today), timing of a move, maybe salary expectations.
-6. **Your questions for them**: always have 3–5 ready.
+6. **Your questions for them**: always have 4–6 ready (see [Questions to ask](#-questions-to-ask-the-manager)).
 
 ### Your 60-second pitch (practice it out loud)
 
@@ -113,14 +113,45 @@ For the manager round, rehearse **1, 2, 3 and 4** in depth. Expect follow-ups li
 
 ## 🙋 Questions to ask the manager
 
-Pick 3–5:
-1. What does the team own today: which data domains, pipelines and APIs, and who consumes them?
-2. What does success look like for this person in the first 90 days?
-3. What's the current stack in practice: Databricks vs. Spark on EMR, which warehouse, where graph databases and Gen AI fit?
-4. What's the biggest technical-debt or data-quality pain right now?
-5. How is the team structured: size, time zones, how work flows from backlog to production?
-6. How do you see Gen AI / agentic patterns being used in Data Enablement?
-7. What do you value most in the engineers on your team?
+Pick 4–6. Ask the logistics ones near the end, after you've shown interest in the work.
+
+### Work model and travel
+
+> The posting says **Work Model: Onsite** (Chicago, World Hq), and travel isn't mentioned. Ask to confirm, without sounding like a condition.
+
+1. The posting lists the role as onsite. What does a typical week look like for the team: how many days in the office, and is there any flexibility?
+2. Where does the team sit day to day: World Hq downtown, or another Chicago office? Is everyone in the same location?
+3. Does the role involve any travel, for example to Moline, Johnston (JDF), or partner sites? Roughly how often?
+4. Is there an on-call or production-support rotation? How does it work?
+
+### The team
+
+5. How big is the team, and what's the mix of roles (data engineers, backend, QA, product owner, architects)?
+6. Is the team all in Chicago, or spread across locations and time zones? How do you collaborate across them?
+7. Who are the main customers of the team's data and APIs, and how closely do engineers work with them?
+8. How does work flow from idea to production: backlog refinement, sprint length, how releases go out?
+9. How do code reviews and pair programming work day to day?
+10. What do you value most in the engineers on your team? What separates the great ones?
+11. How long have people been on the team? Why is this position open (new role or backfill)?
+
+### The work
+
+12. What does the team own today: which data domains, pipelines and APIs?
+13. What's the current stack in practice: Databricks vs. Spark elsewhere, which warehouse or lake, where graph databases fit?
+14. What's the biggest technical-debt or data-quality pain right now?
+15. How do you see Gen AI and agentic patterns being used in Data Enablement?
+
+### Success and growth
+
+16. What would success look like for this person in the first 90 days? In the first year?
+17. What are the biggest challenges the team will face in the next 6–12 months?
+18. How do you support growth: training, AWS certifications, a path toward Staff/Lead?
+19. How would you describe your management style? How do you like to give feedback?
+
+### To close
+
+20. Is there anything in my background that makes you hesitate? I'd like the chance to address it.
+21. What are the next steps, and when should I expect to hear back?
 
 ---
 
