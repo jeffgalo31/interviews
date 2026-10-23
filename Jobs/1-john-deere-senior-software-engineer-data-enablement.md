@@ -109,6 +109,8 @@ Competencies for this posting can be found in the John Deere **Job Catalog Home*
 
 ## Interview Prep Notes
 
+📋 **Interview prep (3 rounds: manager → behavioral → technical):** [1-john-deere-interview-prep.md](1-john-deere-interview-prep.md)
+
 _Add notes, questions, and application status here._
 
 - **Application status:** _Not yet applied_
