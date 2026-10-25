@@ -8,8 +8,6 @@
 
 **Behavioral:** [Behavioral interview questions](../Behavior/Behavioral-Interview-Questions.md) (12 competencies, questions and probes, from a Staff Software Engineer guide)
 
-**Technical practice:** [John Deere Data Enablement tracks](../Technical/John-Deere-Data-Enablement/README.md) (AWS, SQL, Spark, Java, Graph, Gen AI, DevOps, React)
-
 > [!TIP]
 > Click any question to expand the answer. Try answering out loud first.
 
